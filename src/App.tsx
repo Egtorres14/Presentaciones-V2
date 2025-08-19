@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Coffee, Factory, AlertTriangle, ArrowRight, Home, DollarSign, Leaf, Shield, Zap, Recycle, TrendingDown, Users, TreePine, Building, Hammer, Eye, Layers, ToyBrick as Brick, Triangle, Sofa, DoorOpen } from 'lucide-react';
+import { Coffee, Factory, AlertTriangle, ArrowRight, Home, DollarSign, Leaf, Shield, Zap, Recycle, TrendingDown, Users, TreePine, Building, Hammer, Eye } from 'lucide-react';
 import './styles/main.css';
 
 const App: React.FC = () => {
@@ -7,7 +7,6 @@ const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [popupImage, setPopupImage] = useState<string | null>(null);
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
-  const [isProductImage, setIsProductImage] = useState(false);
   const [ciscoInput, setCiscoInput] = useState<string>('196');
   const [calculatorResult, setCalculatorResult] = useState({ exact: 0, rounded: 0 });
   const sectionsRef = useRef<HTMLElement[]>([]);
@@ -25,15 +24,6 @@ const App: React.FC = () => {
     'galeria_9.jpg'
   ];
 
-  // Product images array
-  const productImages = [
-    'pisos.png',
-    'paredes.png', 
-    'techos.png',
-    'mesas.png',
-    'puerta.png',
-    'vivienda.png'
-  ];
   useEffect(() => {
     setIsLoaded(true);
     
@@ -94,30 +84,22 @@ const App: React.FC = () => {
 
   const setupKeyboardNavigation = () => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      const sectionIds = ['hero', 'problema', 'transformacion', 'galeria', 'productos', 'impacto', 'costos', 'proceso'];
+      const sectionIds = ['hero', 'problema', 'transformacion', 'galeria', 'impacto', 'costos', 'proceso'];
       
-      if (popupImage && (galleryImages.includes(popupImage) || productImages.includes(popupImage))) {
-        const currentArray = isProductImage ? productImages : galleryImages;
-        const currentIndex = isProductImage ? productImages.indexOf(popupImage) : currentGalleryIndex;
+      if (popupImage && galleryImages.includes(popupImage)) {
+        const currentArray = galleryImages;
+        const currentIndex = currentGalleryIndex;
         
         if (e.key === 'ArrowRight') {
           e.preventDefault();
           const nextIndex = (currentIndex + 1) % currentArray.length;
-          if (isProductImage) {
-            setPopupImage(currentArray[nextIndex]);
-          } else {
-            setCurrentGalleryIndex(nextIndex);
-            setPopupImage(currentArray[nextIndex]);
-          }
+          setCurrentGalleryIndex(nextIndex);
+          setPopupImage(currentArray[nextIndex]);
         } else if (e.key === 'ArrowLeft') {
           e.preventDefault();
           const prevIndex = currentIndex === 0 ? currentArray.length - 1 : currentIndex - 1;
-          if (isProductImage) {
-            setPopupImage(currentArray[prevIndex]);
-          } else {
-            setCurrentGalleryIndex(prevIndex);
-            setPopupImage(currentArray[prevIndex]);
-          }
+          setCurrentGalleryIndex(prevIndex);
+          setPopupImage(currentArray[prevIndex]);
         } else if (e.key === 'Escape') {
           e.preventDefault();
           closePopup();
@@ -411,34 +393,19 @@ const App: React.FC = () => {
 
   const openGalleryPopup = (imagePath: string) => {
     const imageIndex = galleryImages.indexOf(imagePath);
-    const productIndex = productImages.indexOf(imagePath);
     
     if (imageIndex !== -1) {
-      setIsProductImage(false);
       setCurrentGalleryIndex(imageIndex);
-      setPopupImage(imagePath);
-    } else if (productIndex !== -1) {
-      setIsProductImage(true);
       setPopupImage(imagePath);
     }
   };
 
-  const getPopupCaption = (imagePath: string) => {
-    const productCaptions: { [key: string]: { title: string; description: string } } = {
-      'pisos.png': { title: 'Pisos WPC de Cisco', description: 'Pisos resistentes y duraderos fabricados con cisco de café' },
-      'paredes.png': { title: 'Paneles de Pared WPC', description: 'Revestimiento para paredes con materiales sostenibles' },
-      'techos.png': { title: 'Tejas y Estructuras WPC', description: 'Soluciones para techado con tecnología WPC' },
-      'mesas.png': { title: 'Mobiliario WPC', description: 'Muebles sostenibles fabricados con cisco de café' },
-      'puerta.png': { title: 'Puertas WPC', description: 'Puertas y marcos duraderos con materiales ecológicos' },
-      'vivienda.png': { title: 'Vivienda Completa WPC', description: 'Casa modelo construida íntegramente con materiales WPC de cisco' }
-    };
-    
-    return productCaptions[imagePath] || { title: 'Proceso de Transformación', description: 'Del cisco de café a materiales de construcción sostenibles' };
+  const getPopupCaption = () => {
+    return { title: 'Proceso de Transformación', description: 'Del cisco de café a materiales de construcción sostenibles' };
   };
 
   const closePopup = () => {
     setPopupImage(null);
-    setIsProductImage(false);
   };
   // Force gallery visibility after component mount (fallback)
   const calculateCiscoProduction = (ciscoToneladas: string) => {
@@ -489,7 +456,7 @@ const App: React.FC = () => {
     <div className={`app ${isLoaded ? 'loaded' : ''}`}>
       {/* Progress Navigation */}
       <div className="progress-nav">
-        <div className="progress-line" style={{ width: `${(currentSection + 1) * (100 / 8)}%` }}></div>
+        <div className="progress-line" style={{ width: `${(currentSection + 1) * (100 / 7)}%` }}></div>
       </div>
 
       {/* Navigation Menu */}
@@ -498,10 +465,9 @@ const App: React.FC = () => {
         <a href="#problema" className={currentSection === 1 ? 'active' : ''}>Problema</a>
         <a href="#transformacion" className={currentSection === 2 ? 'active' : ''}>Solución</a>
         <a href="#galeria" className={currentSection === 3 ? 'active' : ''}>Galería</a>
-        <a href="#productos" className={currentSection === 4 ? 'active' : ''}>Productos</a>
-        <a href="#impacto" className={currentSection === 5 ? 'active' : ''}>Impacto</a>
-        <a href="#costos" className={currentSection === 6 ? 'active' : ''}>Costos</a>
-        <a href="#proceso" className={currentSection === 7 ? 'active' : ''}>Proceso</a>
+        <a href="#impacto" className={currentSection === 4 ? 'active' : ''}>Impacto</a>
+        <a href="#costos" className={currentSection === 5 ? 'active' : ''}>Costos</a>
+        <a href="#proceso" className={currentSection === 6 ? 'active' : ''}>Proceso</a>
       </nav>
 
       <main>
@@ -736,72 +702,12 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* SECCIÓN 5: PRODUCTOS */}
-        <section 
-          id="productos" 
-          className="productos-section"
-          ref={el => el && (sectionsRef.current[4] = el)}
-        >
-          <div className="product-background-container">
-            <img 
-              src="/images/vivienda.png" 
-              alt="Vivienda construida con WPC de cisco" 
-              className="product-background"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop';
-              }}
-            />
-          </div>
-          <div className="product-overlay"></div>
-          
-          <div className="container">
-            <h2 className="section-title">Productos WPC de Cisco</h2>
-            
-            <div className="products-grid">
-              <div className="product-item slide-up" onClick={() => openGalleryPopup('pisos.png')}>
-                <Layers className="product-icon" />
-                <h3>Pisos</h3>
-                <p className="product-description">Pisos WPC resistentes y duraderos</p>
-              </div>
-              
-              <div className="product-item slide-up" onClick={() => openGalleryPopup('paredes.png')}>
-                <Brick className="product-icon" />
-                <h3>Paredes</h3>
-                <p className="product-description">Paneles para revestimiento</p>
-              </div>
-              
-              <div className="product-item slide-up" onClick={() => openGalleryPopup('techos.png')}>
-                <Triangle className="product-icon" />
-                <h3>Techos</h3>
-                <p className="product-description">Tejas y estructuras techadas</p>
-              </div>
-              
-              <div className="product-item slide-up" onClick={() => openGalleryPopup('mesas.png')}>
-                <Sofa className="product-icon" />
-                <h3>Muebles</h3>
-                <p className="product-description">Mobiliario sostenible</p>
-              </div>
-              
-              <div className="product-item slide-up" onClick={() => openGalleryPopup('puerta.png')}>
-                <DoorOpen className="product-icon" />
-                <h3>Puertas</h3>
-                <p className="product-description">Puertas y marcos WPC</p>
-              </div>
-              
-              <div className="product-item slide-up" onClick={() => openGalleryPopup('vivienda.png')}>
-                <Home className="product-icon" />
-                <h3>Vivienda</h3>
-                <p className="product-description">Casa modelo completa WPC</p>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* SECCIÓN 6: IMPACTO SOCIAL */}
+        {/* SECCIÓN 5: IMPACTO SOCIAL */}
         <section 
           id="impacto" 
           className="impacto-section"
-          ref={el => el && (sectionsRef.current[5] = el)}
+          ref={el => el && (sectionsRef.current[4] = el)}
         >
           <div className="container">
             <div className="two-columns">
@@ -868,11 +774,11 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* SECCIÓN 7: COSTOS */}
+        {/* SECCIÓN 6: COSTOS */}
         <section 
           id="costos" 
           className="costos-section"
-          ref={el => el && (sectionsRef.current[6] = el)}
+          ref={el => el && (sectionsRef.current[5] = el)}
         >
           <div className="container">
             <div className="two-columns">
@@ -1070,11 +976,11 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* SECCIÓN 8: PROCESO */}
+        {/* SECCIÓN 7: PROCESO */}
         <section 
           id="proceso" 
           className="proceso-section"
-          ref={el => el && (sectionsRef.current[7] = el)}
+          ref={el => el && (sectionsRef.current[6] = el)}
         >
           <div className="video-container">
             <video 
@@ -1131,8 +1037,8 @@ const App: React.FC = () => {
               }}
             />
             <div className="popup-caption">
-             <h3>{getPopupCaption(popupImage).title}</h3>
-             <p>{getPopupCaption(popupImage).description}</p>
+             <h3>{getPopupCaption().title}</h3>
+             <p>{getPopupCaption().description}</p>
             </div>
           </div>
         </div>
