@@ -877,38 +877,6 @@ const App: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="cisco-formula-container">
-                  <div className="formula-highlight">
-                    <h3>Calculadora de Producción WPC</h3>
-                    <div className="formula-content">
-                      <div className="calculator-input-group">
-                        <label htmlFor="ciscoInput" className="calculator-label">
-                          Toneladas de Cisco:
-                        </label>
-                        <input
-                          id="ciscoInput"
-                          type="number"
-                          value={ciscoInput}
-                          onChange={(e) => handleCiscoInputChange(e.target.value)}
-                          className="calculator-input"
-                          placeholder="196"
-                          min="0"
-                          step="0.1"
-                        />
-                      </div>
-                      <div className="calculator-results">
-                        <div className="result-item">
-                          <span className="result-label">Metros cuadrados exactos:</span>
-                          <span className="result-exact">{calculatorResult.exact.toLocaleString('es-CO', { maximumFractionDigits: 1 })} m²</span>
-                        </div>
-                        <div className="result-item">
-                          <span className="result-label">Metros cuadrados (redondeado):</span>
-                          <span className="result-rounded">{calculatorResult.rounded.toLocaleString('es-CO')} m²</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
                 <div className="costos-table-container">
                   <div className="costos-header">
