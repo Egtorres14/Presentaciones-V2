@@ -477,6 +477,13 @@ const App: React.FC = () => {
           className="hero-section"
           ref={el => el && (sectionsRef.current[0] = el)}
         >
+          <div className="contact-watermark">
+            <div className="watermark-content">
+              <p className="watermark-name">Juan Velásquez</p>
+              <p className="watermark-phone">3104290020</p>
+              <p className="watermark-email">jfvelasq@yahoo.com</p>
+            </div>
+          </div>
           <div className="hero-background">
             <img 
               src="/images/imagen_1.png?v=2" 
@@ -512,6 +519,13 @@ const App: React.FC = () => {
           className="problema-section"
           ref={el => el && (sectionsRef.current[1] = el)}
         >
+          <div className="contact-watermark">
+            <div className="watermark-content">
+              <p className="watermark-name">Juan Velásquez</p>
+              <p className="watermark-phone">3104290020</p>
+              <p className="watermark-email">jfvelasq@yahoo.com</p>
+            </div>
+          </div>
           <div className="container">
             <div className="two-columns">
               <div className="content-column">
@@ -590,6 +604,13 @@ const App: React.FC = () => {
           className="transformacion-section"
           ref={el => el && (sectionsRef.current[2] = el)}
         >
+          <div className="contact-watermark">
+            <div className="watermark-content">
+              <p className="watermark-name">Juan Velásquez</p>
+              <p className="watermark-phone">3104290020</p>
+              <p className="watermark-email">jfvelasq@yahoo.com</p>
+            </div>
+          </div>
           <div className="container">
             <div className="two-columns">
               <div className="content-column">
@@ -666,6 +687,13 @@ const App: React.FC = () => {
           className="galeria-section"
           ref={el => el && (sectionsRef.current[3] = el)}
         >
+          <div className="contact-watermark">
+            <div className="watermark-content">
+              <p className="watermark-name">Juan Velásquez</p>
+              <p className="watermark-phone">3104290020</p>
+              <p className="watermark-email">jfvelasq@yahoo.com</p>
+            </div>
+          </div>
           <div className="container">
             <h2 className="section-title">Galería del Proceso</h2>
             <p className="section-subtitle">Descubre cómo transformamos el cisco de café en materiales de construcción</p>
@@ -709,6 +737,13 @@ const App: React.FC = () => {
           className="impacto-section"
           ref={el => el && (sectionsRef.current[4] = el)}
         >
+          <div className="contact-watermark">
+            <div className="watermark-content">
+              <p className="watermark-name">Juan Velásquez</p>
+              <p className="watermark-phone">3104290020</p>
+              <p className="watermark-email">jfvelasq@yahoo.com</p>
+            </div>
+          </div>
           <div className="container">
             <div className="two-columns">
               <div className="content-column">
@@ -780,6 +815,13 @@ const App: React.FC = () => {
           className="costos-section"
           ref={el => el && (sectionsRef.current[5] = el)}
         >
+          <div className="contact-watermark">
+            <div className="watermark-content">
+              <p className="watermark-name">Juan Velásquez</p>
+              <p className="watermark-phone">3104290020</p>
+              <p className="watermark-email">jfvelasq@yahoo.com</p>
+            </div>
+          </div>
           <div className="container">
             <div className="two-columns">
               <div className="content-column">
@@ -962,6 +1004,13 @@ const App: React.FC = () => {
           className="proceso-section"
           ref={el => el && (sectionsRef.current[6] = el)}
         >
+          <div className="contact-watermark">
+            <div className="watermark-content">
+              <p className="watermark-name">Juan Velásquez</p>
+              <p className="watermark-phone">3104290020</p>
+              <p className="watermark-email">jfvelasq@yahoo.com</p>
+            </div>
+          </div>
           <div className="video-container">
             <video 
               className="fullscreen-video"

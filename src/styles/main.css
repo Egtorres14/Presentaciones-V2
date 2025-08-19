@@ -2088,6 +2088,85 @@ section {
   border-top: 2px solid #e9ecef;
   text-align: center;
   font-family: var(--font-title);
+}
+
+/* ==========================================
+   CONTACT WATERMARK STYLES
+   ========================================== */
+
+.contact-watermark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.contact-watermark:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.watermark-content p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.watermark-name {
+  font-weight: 600;
+  font-size: 12px !important;
+  color: #22c55e !important;
+  margin-bottom: 2px !important;
+}
+
+.watermark-phone, .watermark-email {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Responsive watermark */
+@media (max-width: 768px) {
+  .contact-watermark {
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+  }
+  
+  .watermark-content p {
+    font-size: 10px;
+  }
+  
+  .watermark-name {
+    font-size: 11px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-watermark {
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    padding: 6px 10px;
+  }
+  
+  .watermark-content p {
+    font-size: 9px;
+  }
+  
+  .watermark-name {
+    font-size: 10px !important;
+  }
   font-size: 1.2rem;
   color: #2c1810;
   position: relative;
