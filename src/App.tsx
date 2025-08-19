@@ -830,8 +830,8 @@ const App: React.FC = () => {
                       <Zap size={32} />
                     </div>
                     <div className="fact-content">
-                      <h4>Potencial Ideal</h4>
-                      <p><strong>21 mil m²</strong> con 196 toneladas</p>
+                      <h4>Uso Actual de Cisco</h4>
+                      <p><strong>7,500 kilos</strong> de cisco mensuales</p>
                     </div>
                   </div>
                 </div>
@@ -870,36 +870,16 @@ const App: React.FC = () => {
 
                 <div className="costos-table-container">
                   <div className="costos-header">
-                    <h3>Costos por m² de Material WPC</h3>
+                    <h3>Costo por m² (Proyecto Piloto)</h3>
                   </div>
                   
                   <div className="costos-row">
                     <div className="costos-item">
-                      <div className="costos-description">Material WPC Tradicional</div>
-                      <div className="costos-specification">Sin cisco, solo polímeros sintéticos</div>
-                    </div>
-                    <div className="costos-price">
-                      <span className="cost-number">$85,000</span>
-                    </div>
-                  </div>
-
-                  <div className="costos-row">
-                    <div className="costos-item">
                       <div className="costos-description">Material WPC con Cisco</div>
-                      <div className="costos-specification">22% cisco + 78% polímeros</div>
+                      <div className="costos-specification">Proyecto piloto - Incluye procesamiento y acabados</div>
                     </div>
                     <div className="costos-price">
-                      <span className="cost-number">$55,000</span>
-                    </div>
-                  </div>
-
-                  <div className="costos-row">
-                    <div className="costos-item">
-                      <div className="costos-description">Ahorro Total</div>
-                      <div className="costos-specification">Reducción de costos</div>
-                    </div>
-                    <div className="costos-price">
-                      <span className="cost-number" style={{color: '#2D5016'}}>$30,000</span>
+                      <span className="cost-number">$95,000</span>
                     </div>
                   </div>
 
