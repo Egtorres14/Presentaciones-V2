@@ -2773,6 +2773,126 @@ section {
 
 /* Enhanced fallback for footer video */
 .video-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a5f3f 0%, #2d7a2d 100%);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.fallback-content {
+  text-align: center;
+  color: white;
+  max-width: 80%;
+}
+
+.fallback-content h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.fallback-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.fallback-image {
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.fallback-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ensure video container maintains proper structure */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Enhanced video styles */
+.fullscreen-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  object-fit: cover;
+  background: #000;
+}
+
+/* Video overlay remains above everything */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.video-content {
+  text-align: center;
+  color: white;
+  max-width: 80%;
+}
+
+.video-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.video-subtitle {
+  font-size: 1.4rem;
+  opacity: 0.95;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .video-title {
+    font-size: 2.5rem;
+  }
+  
+  .video-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .fallback-content h3 {
+    font-size: 2rem;
+  }
+  
+  .fallback-content p {
+    font-size: 1rem;
+  }
+  
+  .fallback-image {
+    max-width: 300px;
+  }
   display: flex;
   align-items: center;
   justify-content: center;

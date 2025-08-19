@@ -986,12 +986,37 @@ const App: React.FC = () => {
               muted
               loop
               playsInline
+             preload="auto"
+             onError={(e) => {
+               console.warn('Video failed to load:', e);
+               const videoElement = e.target as HTMLVideoElement;
+               const fallback = videoElement.nextElementSibling as HTMLElement;
+               if (fallback && fallback.classList.contains('video-fallback')) {
+                 fallback.style.display = 'flex';
+               }
+             }}
+             onLoadedData={() => {
+               console.log('Video loaded successfully');
+             }}
             >
               <source src="/video/video.mp4" type="video/mp4" />
-              <div className="video-fallback">
-                <p>Video del proceso de transformación no disponible</p>
-              </div>
+             Su navegador no soporta el elemento video.
             </video>
+           <div className="video-fallback" style={{display: 'none'}}>
+             <div className="fallback-content">
+               <h3>Video del Proceso</h3>
+               <p>Video del proceso de transformación no disponible</p>
+               <div className="fallback-image">
+                 <img 
+                   src="/images/imagen_3.png" 
+                   alt="Proceso de transformación del cisco"
+                   onError={(e) => {
+                     (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=800';
+                   }}
+                 />
+               </div>
+             </div>
+           </div>
             <div className="video-overlay">
               <div className="video-content">
                 <h2 className="video-title">El Proceso en Acción</h2>
