@@ -1005,18 +1005,19 @@ const App: React.FC = () => {
       {/* FOOTER */}
       <footer className="video-footer-section">
         <div className="video-footer-container">
-          <video 
-            className="footer-video"
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source src="/video/logos.mp4" type="video/mp4" />
-            <div className="video-fallback">
-              <p>Federación Nacional de Cafeteros de Colombia</p>
-            </div>
-          </video>
+          <img 
+            src="/images/imagen_logos-Photoroom.png" 
+            alt="Federación Nacional de Cafeteros de Colombia" 
+            className="footer-logo-image"
+            onError={(e) => {
+              console.warn('Logo image failed to load');
+              (e.target as HTMLImageElement).style.display = 'none';
+              const fallback = document.createElement('div');
+              fallback.className = 'logo-fallback';
+              fallback.innerHTML = '<p>Federación Nacional de Cafeteros de Colombia</p>';
+              (e.target as HTMLImageElement).parentNode?.appendChild(fallback);
+            }}
+          />
         </div>
       </footer>
 
