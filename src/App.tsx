@@ -1003,21 +1003,49 @@ const App: React.FC = () => {
       </main>
 
       {/* FOOTER */}
-      <footer className="video-footer-section">
-        <div className="video-footer-container">
-          <img 
-            src="/images/imagen_logos-Photoroom.png" 
-            alt="Federación Nacional de Cafeteros de Colombia" 
-            className="footer-logo-image"
-            onError={(e) => {
-              console.warn('Logo image failed to load');
-              (e.target as HTMLImageElement).style.display = 'none';
-              const fallback = document.createElement('div');
-              fallback.className = 'logo-fallback';
-              fallback.innerHTML = '<p>Federación Nacional de Cafeteros de Colombia</p>';
-              (e.target as HTMLImageElement).parentNode?.appendChild(fallback);
-            }}
-          />
+      <footer className="partnership-footer-section">
+        <div className="partnership-container">
+          <div className="partnership-content">
+            <h3 className="partnership-title">En Colaboración con</h3>
+            
+            <div className="logos-container">
+              <div className="logo-wrapper grupo-it">
+                <img 
+                  src="/images/Grupo_it_logo.png" 
+                  alt="Grupo IT" 
+                  className="partnership-logo grupo-logo"
+                  onError={(e) => {
+                    console.warn('Grupo IT logo failed to load');
+                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/200x80/333333/white?text=Grupo+IT';
+                  }}
+                />
+              </div>
+              
+              <div className="connection-animation">
+                <div className="energy-flow"></div>
+                <div className="connecting-line"></div>
+                <div className="pulse-dot pulse-1"></div>
+                <div className="pulse-dot pulse-2"></div>
+                <div className="pulse-dot pulse-3"></div>
+              </div>
+              
+              <div className="logo-wrapper federacion">
+                <img 
+                  src="/images/logo_federacion_cafeteros.png" 
+                  alt="Federación Nacional de Cafeteros de Colombia" 
+                  className="partnership-logo federacion-logo"
+                  onError={(e) => {
+                    console.warn('Federación logo failed to load');
+                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/200x80/228B22/white?text=Federación';
+                  }}
+                />
+              </div>
+            </div>
+            
+            <p className="partnership-subtitle">
+              Transformando el futuro del sector cafetero a través de la innovación tecnológica
+            </p>
+          </div>
         </div>
       </footer>
 
