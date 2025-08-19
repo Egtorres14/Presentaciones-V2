@@ -990,7 +990,7 @@ const App: React.FC = () => {
                   </div>
 
                   <div className="breakdown-total">
-                    <strong>Total: 100% = $55,000 COP/m²</strong>
+                    <strong>Total: 100% = $95,000 COP/m²</strong>
                   </div>
                 </div>
               </div>
