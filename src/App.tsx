@@ -84,7 +84,7 @@ const App: React.FC = () => {
 
   const setupKeyboardNavigation = () => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      const sectionIds = ['hero', 'problema', 'transformacion', 'galeria', 'impacto', 'costos', 'proceso'];
+      const sectionIds = ['hero', 'problema', 'transformacion', 'galeria', 'impacto', 'costos', 'proceso', 'economia-circular'];
       
       if (popupImage && galleryImages.includes(popupImage)) {
         const currentArray = galleryImages;
@@ -456,7 +456,7 @@ const App: React.FC = () => {
     <div className={`app ${isLoaded ? 'loaded' : ''}`}>
       {/* Progress Navigation */}
       <div className="progress-nav">
-        <div className="progress-line" style={{ width: `${(currentSection + 1) * (100 / 7)}%` }}></div>
+        <div className="progress-line" style={{ width: `${(currentSection + 1) * (100 / 8)}%` }}></div>
       </div>
 
       {/* Navigation Menu */}
@@ -468,6 +468,7 @@ const App: React.FC = () => {
         <a href="#impacto" className={currentSection === 4 ? 'active' : ''}>Impacto</a>
         <a href="#costos" className={currentSection === 5 ? 'active' : ''}>Costos</a>
         <a href="#proceso" className={currentSection === 6 ? 'active' : ''}>Proceso</a>
+        <a href="#economia-circular" className={currentSection === 7 ? 'active' : ''}>RSC</a>
       </nav>
 
       <main>
@@ -1021,6 +1022,146 @@ const App: React.FC = () => {
               <div className="video-content">
                 <h2 className="video-title">El Proceso Continua</h2>
                 <p className="video-subtitle">De residuo a recurso: así transformamos el cisco en materiales de construcción</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECCIÓN 8: ECONOMÍA CIRCULAR Y RSC */}
+        <section
+          id="economia-circular"
+          className="economia-circular-section"
+          ref={el => el && (sectionsRef.current[7] = el)}
+        >
+          <div className="contact-watermark">
+            <div className="watermark-content">
+              <p className="watermark-name">Juan Velásquez</p>
+              <p className="watermark-phone">3104290020</p>
+              <p className="watermark-email">jfvelasq@yahoo.com</p>
+            </div>
+          </div>
+          <div className="container">
+            <div className="two-columns">
+              <div className="content-column">
+                <h2 className="section-title slide-up">Responsabilidad Social Corporativa</h2>
+
+                <div className="rsc-explanation slide-up">
+                  <p className="rsc-definition">
+                    Este proyecto materializa la <strong>RSC</strong> al implementar políticas que protegen el medio ambiente y promueven el desarrollo sostenible.
+                  </p>
+                </div>
+
+                <div className="rsc-commitment slide-up">
+                  <h3 className="commitment-title">Compromiso Ambiental</h3>
+                  <div className="commitment-items">
+                    <div className="commitment-item">
+                      <div className="commitment-icon">
+                        <Recycle size={36} className="icon-recycle" />
+                      </div>
+                      <div className="commitment-text">
+                        <h4>Economía Circular</h4>
+                        <p>Minimizamos residuos valorizando un residuo agrícola y reduciendo el consumo de plásticos vírgenes</p>
+                      </div>
+                    </div>
+
+                    <div className="commitment-item">
+                      <div className="commitment-icon">
+                        <Leaf size={36} className="icon-carbon" />
+                      </div>
+                      <div className="commitment-text">
+                        <h4>Reducción de Huella de Carbono</h4>
+                        <p>Disminución de emisiones de CO₂ entre <strong>40-60%</strong> frente a la madera convencional</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="beneficios-clave slide-up">
+                  <h3 className="beneficios-title">Beneficios Clave del Proyecto</h3>
+
+                  <div className="beneficio-card">
+                    <div className="beneficio-header">
+                      <TreePine size={28} className="beneficio-icon" />
+                      <h4>Ambientales</h4>
+                    </div>
+                    <ul className="beneficio-list">
+                      <li>Valorización de residuos agrícolas</li>
+                      <li>Reducción de la deforestación</li>
+                      <li>Disminución de disposición inadecuada de desechos</li>
+                    </ul>
+                  </div>
+
+                  <div className="beneficio-card">
+                    <div className="beneficio-header">
+                      <DollarSign size={28} className="beneficio-icon" />
+                      <h4>Económicos</h4>
+                    </div>
+                    <ul className="beneficio-list">
+                      <li>Impulso a la economía circular</li>
+                      <li>Generación de empleo rural</li>
+                      <li>Producto más durable y de menor mantenimiento</li>
+                    </ul>
+                  </div>
+
+                  <div className="beneficio-card">
+                    <div className="beneficio-header">
+                      <Shield size={28} className="beneficio-icon" />
+                      <h4>Respaldo Institucional</h4>
+                    </div>
+                    <ul className="beneficio-list">
+                      <li>Alineado con el Plan Nacional de Desarrollo</li>
+                      <li>Cumple con la política de Basura Cero</li>
+                      <li>Compromiso con un futuro sostenible</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mensaje-final slide-up">
+                  <div className="mensaje-box">
+                    <Recycle size={48} className="mensaje-icon" />
+                    <p className="mensaje-text">
+                      <strong>Convertimos un residuo en una oportunidad,</strong> demostrando un compromiso real con un futuro sostenible.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="image-column">
+                <div className="ciclo-showcase slide-right">
+                  <img
+                    src="/images/Ciclo_cisco.png"
+                    alt="Ciclo de economía circular del cisco"
+                    className="ciclo-image"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/3850512/pexels-photo-3850512.jpeg?auto=compress&cs=tinysrgb&w=800';
+                    }}
+                  />
+                  <div className="ciclo-caption">
+                    <h4>El Ciclo de Transformación Continua</h4>
+                    <div className="ciclo-steps">
+                      <div className="step-item">
+                        <span className="step-number">1</span>
+                        <p>Obtención del cisco de café</p>
+                      </div>
+                      <div className="step-item">
+                        <span className="step-number">2</span>
+                        <p>Combinación con polietileno para crear masa plástica</p>
+                      </div>
+                      <div className="step-item">
+                        <span className="step-number">3</span>
+                        <p>Transformación en material de construcción similar a la madera</p>
+                      </div>
+                      <div className="step-item">
+                        <span className="step-number">4</span>
+                        <p>Construcción de puertas, paredes y techos</p>
+                      </div>
+                      <div className="step-item">
+                        <span className="step-number">5</span>
+                        <p>Reciclaje al final de su vida útil y reinicio del ciclo</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

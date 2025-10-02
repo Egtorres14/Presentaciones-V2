@@ -3207,3 +3207,302 @@ section {
          font-size: 2.5rem;
      }
 }
+
+/* SECCIÓN 8: ECONOMÍA CIRCULAR Y RSC */
+.economia-circular-section {
+    min-height: 100vh;
+    padding: var(--spacing-xxl) 0;
+    background: linear-gradient(135deg, #f8faf5 0%, #e8f5e1 100%);
+    position: relative;
+}
+
+.economia-circular-section .two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.economia-circular-section .content-column {
+    padding: var(--spacing-md);
+}
+
+.rsc-explanation {
+    margin-bottom: var(--spacing-lg);
+}
+
+.rsc-definition {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--cafe-oscuro);
+    margin-bottom: var(--spacing-md);
+}
+
+.rsc-commitment {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-light);
+}
+
+.commitment-title {
+    font-size: 1.5rem;
+    color: var(--verde-sostenible);
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-title);
+}
+
+.commitment-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.commitment-item {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: start;
+    padding: var(--spacing-md);
+    background: var(--gris-claro);
+    border-radius: 12px;
+    transition: var(--transition-fast);
+}
+
+.commitment-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.commitment-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--verde-sostenible), var(--verde-claro));
+    border-radius: 12px;
+    color: white;
+}
+
+.commitment-text h4 {
+    font-size: 1.2rem;
+    color: var(--cafe-oscuro);
+    margin-bottom: var(--spacing-xs);
+}
+
+.commitment-text p {
+    color: var(--gris-medio);
+    line-height: 1.6;
+}
+
+.beneficios-clave {
+    margin-bottom: var(--spacing-xl);
+}
+
+.beneficios-title {
+    font-size: 1.5rem;
+    color: var(--cafe-oscuro);
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-title);
+}
+
+.beneficio-card {
+    background: white;
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-fast);
+}
+
+.beneficio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.beneficio-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.beneficio-header h4 {
+    font-size: 1.3rem;
+    color: var(--cafe-oscuro);
+}
+
+.beneficio-icon {
+    color: var(--verde-sostenible);
+}
+
+.beneficio-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.beneficio-list li {
+    padding: var(--spacing-xs) 0;
+    padding-left: var(--spacing-lg);
+    position: relative;
+    color: var(--gris-medio);
+    line-height: 1.6;
+}
+
+.beneficio-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--verde-sostenible);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.mensaje-final {
+    margin-top: var(--spacing-lg);
+}
+
+.mensaje-box {
+    background: linear-gradient(135deg, var(--verde-sostenible), var(--verde-claro));
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    box-shadow: var(--shadow-medium);
+}
+
+.mensaje-icon {
+    color: white;
+    flex-shrink: 0;
+}
+
+.mensaje-text {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.mensaje-text strong {
+    font-weight: 700;
+}
+
+.ciclo-showcase {
+    position: sticky;
+    top: 100px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-heavy);
+}
+
+.ciclo-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ciclo-caption {
+    padding: var(--spacing-lg);
+    background: var(--gris-claro);
+}
+
+.ciclo-caption h4 {
+    font-size: 1.3rem;
+    color: var(--cafe-oscuro);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    font-family: var(--font-title);
+}
+
+.ciclo-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: white;
+    border-radius: 8px;
+    transition: var(--transition-fast);
+}
+
+.step-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-light);
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--azul-corporativo), var(--verde-sostenible));
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.step-item p {
+    color: var(--gris-medio);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .economia-circular-section .two-columns {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .ciclo-showcase {
+        position: relative;
+        top: 0;
+    }
+
+    .commitment-items {
+        gap: var(--spacing-sm);
+    }
+
+    .commitment-item {
+        padding: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 768px) {
+    .economia-circular-section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .commitment-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .mensaje-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mensaje-text {
+        font-size: 1rem;
+    }
+
+    .step-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+}
