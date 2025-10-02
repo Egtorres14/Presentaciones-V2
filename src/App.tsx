@@ -404,6 +404,9 @@ const App: React.FC = () => {
   };
 
   const getPopupCaption = () => {
+    if (popupImage === 'Ciclo_cisco.png') {
+      return { title: 'Ciclo de Economía Circular', description: 'Del cisco de café a materiales de construcción y de vuelta al inicio del ciclo' };
+    }
     return { title: 'Proceso de Transformación', description: 'Del cisco de café a materiales de construcción sostenibles' };
   };
 
@@ -1134,7 +1137,9 @@ const App: React.FC = () => {
                   <img
                     src="/images/Ciclo_cisco.png"
                     alt="Ciclo de economía circular del cisco"
-                    className="ciclo-image"
+                    className="ciclo-image clickable"
+                    onClick={() => setPopupImage('Ciclo_cisco.png')}
+                    style={{ cursor: 'pointer' }}
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/3850512/pexels-photo-3850512.jpeg?auto=compress&cs=tinysrgb&w=800';
                     }}

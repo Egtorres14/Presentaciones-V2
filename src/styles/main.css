@@ -3395,12 +3395,28 @@ section {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow-heavy);
+    transition: var(--transition-fast);
+}
+
+.ciclo-showcase:hover {
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
 }
 
 .ciclo-image {
     width: 100%;
     height: auto;
     display: block;
+    transition: var(--transition-fast);
+}
+
+.ciclo-image.clickable {
+    cursor: pointer;
+}
+
+.ciclo-image.clickable:hover {
+    transform: scale(1.02);
+    filter: brightness(1.05);
 }
 
 .ciclo-caption {
