@@ -81,21 +81,7 @@ body {
 .nav-items {
     position: fixed;
     top: 20px;
-    right: 20px;
-  .galeria-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
-  }
-  
-  .galeria-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
-  }
-  
-  .galeria-item {
-    min-height: 250px;
-  }
-  
+    left: 20px;
     display: flex;
     gap: var(--spacing-xs);
     flex-wrap: wrap;
@@ -3161,7 +3147,7 @@ section {
 @media (max-width: 1024px) {
     .nav-items {
         top: 10px;
-        right: 10px;
+        left: 10px;
         gap: 4px;
     }
     
