@@ -1019,7 +1019,7 @@ const App: React.FC = () => {
            </div>
             <div className="video-overlay">
               <div className="video-content">
-                <h2 className="video-title">El Proceso en Acción</h2>
+                <h2 className="video-title">El Proceso Continua</h2>
                 <p className="video-subtitle">De residuo a recurso: así transformamos el cisco en materiales de construcción</p>
               </div>
             </div>
