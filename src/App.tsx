@@ -152,6 +152,9 @@ const App: React.FC = () => {
       case 'costos':
         animateCostCounters();
         break;
+      case 'economia-circular':
+        animateGenericSection(section);
+        break;
       default:
         animateGenericSection(section);
     }
@@ -1043,15 +1046,15 @@ const App: React.FC = () => {
           <div className="container">
             <div className="two-columns">
               <div className="content-column">
-                <h2 className="section-title slide-up">Responsabilidad Social Corporativa</h2>
+                <h2 className="section-title">Responsabilidad Social Corporativa</h2>
 
-                <div className="rsc-explanation slide-up">
+                <div className="rsc-explanation">
                   <p className="rsc-definition">
                     Este proyecto materializa la <strong>RSC</strong> al implementar políticas que protegen el medio ambiente y promueven el desarrollo sostenible.
                   </p>
                 </div>
 
-                <div className="rsc-commitment slide-up">
+                <div className="rsc-commitment">
                   <h3 className="commitment-title">Compromiso Ambiental</h3>
                   <div className="commitment-items">
                     <div className="commitment-item">
@@ -1076,7 +1079,7 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="beneficios-clave slide-up">
+                <div className="beneficios-clave">
                   <h3 className="beneficios-title">Beneficios Clave del Proyecto</h3>
 
                   <div className="beneficio-card">
@@ -1116,7 +1119,7 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mensaje-final slide-up">
+                <div className="mensaje-final">
                   <div className="mensaje-box">
                     <Recycle size={48} className="mensaje-icon" />
                     <p className="mensaje-text">
@@ -1127,7 +1130,7 @@ const App: React.FC = () => {
               </div>
 
               <div className="image-column">
-                <div className="ciclo-showcase slide-right">
+                <div className="ciclo-showcase">
                   <img
                     src="/images/Ciclo_cisco.png"
                     alt="Ciclo de economía circular del cisco"

@@ -3214,6 +3214,8 @@ section {
     padding: var(--spacing-xxl) 0;
     background: linear-gradient(135deg, #f8faf5 0%, #e8f5e1 100%);
     position: relative;
+    opacity: 1;
+    visibility: visible;
 }
 
 .economia-circular-section .two-columns {
@@ -3225,6 +3227,16 @@ section {
 
 .economia-circular-section .content-column {
     padding: var(--spacing-md);
+}
+
+.economia-circular-section .section-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.economia-circular-section .image-column {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .rsc-explanation {
