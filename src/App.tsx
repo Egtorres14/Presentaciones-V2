@@ -86,7 +86,7 @@ const App: React.FC = () => {
 
   const setupKeyboardNavigation = () => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      const sectionIds = ['hero', 'problema', 'transformacion', 'galeria', 'aplicaciones-urbanas', 'impacto', 'costos', 'proceso', 'economia-circular'];
+      const sectionIds = ['hero', 'problema', 'transformacion', 'galeria', 'aplicaciones-urbanas', 'impacto', 'economia-circular'];
       
       if (popupImage && galleryImages.includes(popupImage)) {
         const currentArray = galleryImages;
@@ -483,7 +483,7 @@ const App: React.FC = () => {
     <div className={`app ${isLoaded ? 'loaded' : ''}`}>
       {/* Progress Navigation */}
       <div className="progress-nav">
-        <div className="progress-line" style={{ width: `${(currentSection + 1) * (100 / 9)}%` }}></div>
+        <div className="progress-line" style={{ width: `${(currentSection + 1) * (100 / 7)}%` }}></div>
       </div>
 
       {/* Navigation Menu */}
@@ -494,9 +494,7 @@ const App: React.FC = () => {
         <a href="#galeria" className={currentSection === 3 ? 'active' : ''}>Galería</a>
         <a href="#aplicaciones-urbanas" className={currentSection === 4 ? 'active' : ''}>Urbano</a>
         <a href="#impacto" className={currentSection === 5 ? 'active' : ''}>Impacto</a>
-        <a href="#costos" className={currentSection === 6 ? 'active' : ''}>Costos</a>
-        <a href="#proceso" className={currentSection === 7 ? 'active' : ''}>Proceso</a>
-        <a href="#economia-circular" className={currentSection === 8 ? 'active' : ''}>RSC</a>
+        <a href="#economia-circular" className={currentSection === 6 ? 'active' : ''}>RSC</a>
       </nav>
 
       <main>
@@ -1043,273 +1041,11 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* SECCIÓN 7: COSTOS */}
-        <section
-          id="costos"
-          className="costos-section"
-          ref={el => el && (sectionsRef.current[6] = el)}
-        >
-          <div className="contact-watermark">
-            <div className="watermark-content">
-              <p className="watermark-name">Juan Velásquez</p>
-              <p className="watermark-phone">3104290020</p>
-              <p className="watermark-email">jfvelasq@yahoo.com</p>
-            </div>
-          </div>
-          <div className="container">
-            <div className="two-columns">
-              <div className="content-column">
-                <h2 className="section-title">Análisis de Costos</h2>
-                
-                <div className="costos-explanation">
-                  <p className="costos-definition">
-                    Los <strong>materiales WPC de cisco</strong> ofrecen una ventaja económica significativa comparado con materiales de construcción tradicionales.
-                  </p>
-                  <p className="costos-context">
-                    Cada metro cuadrado de WPC contiene <strong>55% cisco</strong> y pesa <strong>17 kilos</strong>, creando un modelo económico sostenible.
-                  </p>
-                </div>
-
-                <div className="production-facts-container">
-                  <div className="production-fact">
-                    <div className="fact-icon">
-                      <Coffee size={32} />
-                    </div>
-                    <div className="fact-content">
-                      <h4>Composición WPC</h4>
-                      <p><strong>55% cisco</strong> por metro cuadrado</p>
-                    </div>
-                  </div>
-                  
-                  <div className="production-fact">
-                    <div className="fact-icon">
-                      <Building size={32} />
-                    </div>
-                    <div className="fact-content">
-                      <h4>Peso Material</h4>
-                      <p><strong>17 kg</strong> por metro cuadrado</p>
-                    </div>
-                  </div>
-                  
-                  <div className="production-fact">
-                    <div className="fact-icon">
-                      <Factory size={32} />
-                    </div>
-                    <div className="fact-content">
-                      <h4>Capacidad Planta</h4>
-                      <p><strong>800 m²</strong> por mes</p>
-                    </div>
-                  </div>
-                  
-                  <div className="production-fact">
-                    <div className="fact-icon">
-                      <Zap size={32} />
-                    </div>
-                    <div className="fact-content">
-                      <h4>Uso Actual de Cisco</h4>
-                      <p><strong>7,500 kilos</strong> de cisco mensuales</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="costos-table-container">
-                  <div className="costos-header">
-                    <h3>Costo por m² (Proyecto Piloto)</h3>
-                  </div>
-                  
-                  <div className="costos-row">
-                    <div className="costos-item">
-                      <div className="costos-description">Material WPC con Cisco</div>
-                      <div className="costos-specification">Proyecto piloto - Incluye procesamiento y acabados</div>
-                    </div>
-                    <div className="costos-price">
-                      <span className="cost-number">$95,000</span>
-                    </div>
-                  </div>
-
-                  <div className="costos-note">
-                    <p>*Precios en COP por metro cuadrado. Incluye procesamiento y acabados.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="image-column">
-                <div className="costos-breakdown">
-                  <h3>Distribución de Costos</h3>
-                  
-                  <div className="breakdown-chart">
-                    <div className="breakdown-item">
-                      <div className="breakdown-label-section">
-                        <div className="breakdown-category-icon"></div>
-                        <span>Cisco de café (55%)</span>
-                      </div>
-                      <div className="breakdown-bar-container">
-                        <div className="breakdown-bar" style={{width: '20%'}}>
-                          <span className="breakdown-percentage-small">20%</span>
-                        </div>
-                      </div>
-                      <div className="breakdown-percentage-display">20%</div>
-                    </div>
-
-                    <div className="breakdown-item">
-                      <div className="breakdown-label-section">
-                        <div className="breakdown-category-icon"></div>
-                        <span>Polímeros y aditivos</span>
-                      </div>
-                      <div className="breakdown-bar-container">
-                        <div className="breakdown-bar" style={{width: '35%'}}>
-                          <span className="breakdown-percentage-small">35%</span>
-                        </div>
-                      </div>
-                      <div className="breakdown-percentage-display">35%</div>
-                    </div>
-
-                    <div className="breakdown-item">
-                      <div className="breakdown-label-section">
-                        <div className="breakdown-category-icon"></div>
-                        <span>Procesamiento</span>
-                      </div>
-                      <div className="breakdown-bar-container">
-                        <div className="breakdown-bar" style={{width: '30%'}}>
-                          <span className="breakdown-percentage-small">30%</span>
-                        </div>
-                      </div>
-                      <div className="breakdown-percentage-display">30%</div>
-                    </div>
-
-                    <div className="breakdown-item">
-                      <div className="breakdown-label-section">
-                        <div className="breakdown-category-icon"></div>
-                        <span>Distribución y otros</span>
-                      </div>
-                      <div className="breakdown-bar-container">
-                        <div className="breakdown-bar" style={{width: '20%'}}>
-                          <span className="breakdown-percentage-small">20%</span>
-                        </div>
-                      </div>
-                      <div className="breakdown-percentage-display">20%</div>
-                    </div>
-                  </div>
-
-                  <div className="breakdown-total">
-                    <strong>Total: 100% = $95,000 COP/m²</strong>
-                  </div>
-                </div>
-
-                <div style={{marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)', borderRadius: '16px', color: 'white'}}>
-                  <h3 style={{fontSize: '1.4rem', marginBottom: '1.5rem', textAlign: 'center'}}>Calculadora de Impacto Urbano</h3>
-                  <p style={{textAlign: 'center', marginBottom: '2rem', opacity: 0.9}}>Calcula cuánto mobiliario urbano puedes producir con residuos disponibles</p>
-
-                  <div style={{background: 'rgba(255,255,255,0.1)', padding: '1.5rem', borderRadius: '12px', marginBottom: '1.5rem'}}>
-                    <label style={{display: 'block', marginBottom: '0.5rem', fontWeight: 'bold'}}>
-                      Toneladas de residuos urbanos disponibles (madera marina + HDPE):
-                    </label>
-                    <input
-                      type="number"
-                      value={urbanWasteInput}
-                      onChange={(e) => handleUrbanWasteInputChange(e.target.value)}
-                      style={{width: '100%', padding: '0.75rem', fontSize: '1.1rem', borderRadius: '8px', border: '2px solid rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.9)', color: '#1e3a8a', fontWeight: 'bold'}}
-                      placeholder="Ej: 50"
-                    />
-                  </div>
-
-                  <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem'}}>
-                    <div style={{background: 'rgba(255,255,255,0.15)', padding: '1.5rem', borderRadius: '12px', textAlign: 'center'}}>
-                      <Anchor size={32} style={{margin: '0 auto 0.5rem', display: 'block'}} />
-                      <p style={{fontSize: '2rem', fontWeight: 'bold', margin: '0.5rem 0'}}>{urbanCalculatorResult.benches}</p>
-                      <p style={{fontSize: '0.9rem', opacity: 0.9}}>Bancas para malecón</p>
-                      <p style={{fontSize: '0.75rem', opacity: 0.7, marginTop: '0.5rem'}}>~85 kg por banca</p>
-                    </div>
-                    <div style={{background: 'rgba(255,255,255,0.15)', padding: '1.5rem', borderRadius: '12px', textAlign: 'center'}}>
-                      <Building2 size={32} style={{margin: '0 auto 0.5rem', display: 'block'}} />
-                      <p style={{fontSize: '2rem', fontWeight: 'bold', margin: '0.5rem 0'}}>{urbanCalculatorResult.shelters}</p>
-                      <p style={{fontSize: '0.9rem', opacity: 0.9}}>Casetas de playa</p>
-                      <p style={{fontSize: '0.75rem', opacity: 0.7, marginTop: '0.5rem'}}>~450 kg por caseta</p>
-                    </div>
-                    <div style={{background: 'rgba(255,255,255,0.15)', padding: '1.5rem', borderRadius: '12px', textAlign: 'center'}}>
-                      <Music size={32} style={{margin: '0 auto 0.5rem', display: 'block'}} />
-                      <p style={{fontSize: '2rem', fontWeight: 'bold', margin: '0.5rem 0'}}>{urbanCalculatorResult.deckMeters}</p>
-                      <p style={{fontSize: '0.9rem', opacity: 0.9}}>Metros de deck</p>
-                      <p style={{fontSize: '0.75rem', opacity: 0.7, marginTop: '0.5rem'}}>~17 kg por m²</p>
-                    </div>
-                  </div>
-
-                  <div style={{marginTop: '1.5rem', padding: '1rem', background: 'rgba(255,215,0,0.2)', borderRadius: '8px', border: '1px solid rgba(255,215,0,0.4)'}}>
-                    <p style={{margin: 0, fontSize: '0.9rem', lineHeight: '1.6'}}>
-                      <strong>💡 Nota:</strong> Estas estimaciones asumen uso combinado de madera marina recuperada y plástico HDPE reciclado. Los valores reales pueden variar según diseño y especificaciones técnicas.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SECCIÓN 8: PROCESO */}
-        <section
-          id="proceso"
-          className="proceso-section"
-          ref={el => el && (sectionsRef.current[7] = el)}
-        >
-          <div className="contact-watermark">
-            <div className="watermark-content">
-              <p className="watermark-name">Juan Velásquez</p>
-              <p className="watermark-phone">3104290020</p>
-              <p className="watermark-email">jfvelasq@yahoo.com</p>
-            </div>
-          </div>
-          <div className="video-container">
-            <video 
-              className="fullscreen-video"
-              autoPlay
-              muted
-              loop
-              playsInline
-             preload="auto"
-             onError={(e) => {
-               console.warn('Video failed to load:', e);
-               const videoElement = e.target as HTMLVideoElement;
-               const fallback = videoElement.nextElementSibling as HTMLElement;
-               if (fallback && fallback.classList.contains('video-fallback')) {
-                 fallback.style.display = 'flex';
-               }
-             }}
-             onLoadedData={() => {
-               console.log('Video loaded successfully');
-             }}
-            >
-              <source src="/video/video.mp4" type="video/mp4" />
-             Su navegador no soporta el elemento video.
-            </video>
-           <div className="video-fallback" style={{display: 'none'}}>
-             <div className="fallback-content">
-               <h3>Video del Proceso</h3>
-               <p>Video del proceso de transformación no disponible</p>
-               <div className="fallback-image">
-                 <img 
-                   src="/images/imagen_3.png" 
-                   alt="Proceso de transformación del cisco"
-                   onError={(e) => {
-                     (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=800';
-                   }}
-                 />
-               </div>
-             </div>
-           </div>
-            <div className="video-overlay">
-              <div className="video-content">
-                <h2 className="video-title">El Proceso Continua</h2>
-                <p className="video-subtitle">De residuo a recurso: así transformamos el cisco en materiales de construcción</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SECCIÓN 9: ECONOMÍA CIRCULAR Y RSC */}
+        {/* SECCIÓN 7: ECONOMÍA CIRCULAR Y RSC */}
         <section
           id="economia-circular"
           className="economia-circular-section"
-          ref={el => el && (sectionsRef.current[8] = el)}
+          ref={el => el && (sectionsRef.current[6] = el)}
         >
           <div className="contact-watermark">
             <div className="watermark-content">
@@ -1510,48 +1246,12 @@ const App: React.FC = () => {
       </main>
 
       {/* FOOTER */}
-      <footer className="partnership-footer-section">
+      <footer className="partnership-footer-section" style={{background: 'linear-gradient(135deg, #2d5016 0%, #1a3009 100%)', padding: '3rem 0', minHeight: '200px'}}>
         <div className="partnership-container">
           <div className="partnership-content">
-            <h3 className="partnership-title">En Colaboración con</h3>
-
-            <div className="logos-container" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '2rem', alignItems: 'center', justifyItems: 'center', maxWidth: '900px', margin: '0 auto'}}>
-              <div className="logo-wrapper grupo-it">
-                <img
-                  src="/images/Grupo_it_logo.png"
-                  alt="Grupo IT"
-                  className="partnership-logo grupo-logo"
-                  onError={(e) => {
-                    console.warn('Grupo IT logo failed to load');
-                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/200x80/333333/white?text=Grupo+IT';
-                  }}
-                />
-              </div>
-
-              <div className="logo-wrapper federacion">
-                <img
-                  src="/images/logo_federacion_cafeteros.png"
-                  alt="Federación Nacional de Cafeteros de Colombia"
-                  className="partnership-logo federacion-logo"
-                  onError={(e) => {
-                    console.warn('Federación logo failed to load');
-                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/200x80/228B22/white?text=Federación';
-                  }}
-                />
-              </div>
-
-              <div className="logo-wrapper santa-marta" style={{padding: '1.5rem', background: 'rgba(30, 144, 255, 0.1)', borderRadius: '12px', border: '2px dashed rgba(30, 144, 255, 0.3)', minHeight: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                <div style={{textAlign: 'center'}}>
-                  <Building2 size={48} style={{color: '#1E90FF', margin: '0 auto 0.5rem'}} />
-                  <p style={{fontSize: '0.9rem', color: '#1E90FF', fontWeight: 'bold', margin: 0}}>Gobierno de</p>
-                  <p style={{fontSize: '1.1rem', color: '#1E90FF', fontWeight: 'bold', margin: 0}}>Santa Marta</p>
-                  <p style={{fontSize: '0.75rem', color: '#666', marginTop: '0.5rem'}}>(Logo próximamente)</p>
-                </div>
-              </div>
-            </div>
-
-            <p className="partnership-subtitle" style={{marginTop: '2rem'}}>
-              Transformando comunidades cafeteras y ciudades costeras a través de la innovación sostenible
+            <h3 className="partnership-title" style={{fontSize: '1.5rem', marginBottom: '1rem', color: '#e2e8f0'}}>Innovación Sostenible para un Futuro Verde</h3>
+            <p className="partnership-subtitle" style={{fontSize: '1rem', color: '#94a3b8', maxWidth: '700px', margin: '0 auto'}}>
+              Transformando residuos en oportunidades a través de tecnología WPC
             </p>
           </div>
         </div>
