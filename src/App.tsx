@@ -512,18 +512,18 @@ const App: React.FC = () => {
             </div>
           </div>
           <div className="hero-background">
-            <img 
-              src="/images/imagen_1.png?v=2" 
-              alt="Grano de café colombiano" 
+            <img
+              src="/images/Banner.png"
+              alt="Transformando residuos en recursos sostenibles"
               className="hero-image"
               onError={(e) => {
-                console.warn('imagen_1.png failed to load, falling back to Pexels');
+                console.warn('Banner.png failed to load, falling back to default');
                 (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop';
               }}
               onLoad={(e) => {
                 const img = e.target as HTMLImageElement;
-                console.log(`Image loaded successfully: ${img.src}`);
-                console.log(`Image dimensions: ${img.naturalWidth} x ${img.naturalHeight}`);
+                console.log(`Banner loaded successfully: ${img.src}`);
+                console.log(`Banner dimensions: ${img.naturalWidth} x ${img.naturalHeight}`);
               }}
             />
           </div>
