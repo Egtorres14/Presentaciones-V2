@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Coffee, Factory, AlertTriangle, ArrowRight, Home, DollarSign, Leaf, Shield, Zap, Recycle, TrendingDown, Users, TreePine, Building, Hammer, Eye, Waves, Trash2, Anchor, PalmtreeIcon as Palmtree, Building2, Music } from 'lucide-react';
-import './styles/main.css';
+import './index.css';
 
 const App: React.FC = () => {
   const [currentSection, setCurrentSection] = useState(0);
