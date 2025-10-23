@@ -3523,3 +3523,31 @@ section {
         gap: var(--spacing-sm);
     }
 }
+
+/* APLICACIONES URBANAS SECTION */
+.aplicaciones-urbanas-section {
+    min-height: 100vh;
+    padding: var(--spacing-xxl) 0;
+    position: relative;
+}
+
+.aplicaciones-urbanas-section .section-title,
+.aplicaciones-urbanas-section .section-subtitle {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.urban-app-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.urban-app-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+    .aplicaciones-urbanas-section {
+        padding: var(--spacing-xl) 0;
+    }
+}
