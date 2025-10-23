@@ -15,10 +15,10 @@ const App: React.FC = () => {
   
   // Gallery images array for navigation
   const galleryImages = [
-    'galeria_1.jpg',
-    'galeria_2.jpg', 
-    'galeria_3.jpg',
-    'galeria_4.jpg',
+    'Render_plataforma.jpg',
+    'kioskos.png',
+    'Imagen_render_mesas_sillas_jardineras.jpg',
+    'Parque_de_los_novios-con-mesas-y-sillas.png',
     'galeria_5.jpg',
     'galeria_6.jpg',
     'galeria_7.jpg',
@@ -784,8 +784,8 @@ const App: React.FC = () => {
             </div>
           </div>
           <div className="container">
-            <h2 className="section-title">Galería del Proceso</h2>
-            <p className="section-subtitle">Descubre cómo transformamos el cisco de café en materiales de construcción</p>
+            <h2 className="section-title">Galería de Aplicaciones Urbanas</h2>
+            <p className="section-subtitle">Visualiza el mobiliario sostenible para espacios públicos de Santa Marta</p>
             
             <div className="galeria-grid">
               {galleryImages.map((image, index) => (
@@ -846,17 +846,17 @@ const App: React.FC = () => {
 
             <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginTop: '3rem'}}>
 
-              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease'}}>
-                <div style={{height: '240px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative'}}>
-                  <Anchor size={80} style={{color: 'white', opacity: 0.9}} />
-                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(255,255,255,0.2)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                    Próximamente
+              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('Render_plataforma.jpg')}>
+                <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
+                  <img src="/images/Render_plataforma.jpg" alt="Decks para eventos culturales" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
+                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(37, 99, 235, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
+                    Ver diseño
                   </div>
                 </div>
                 <div style={{padding: '1.5rem'}}>
-                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Bancas para el Malecón</h3>
+                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Decks para Eventos Culturales</h3>
                   <p style={{color: '#666', lineHeight: '1.6', marginBottom: '1rem'}}>
-                    Mobiliario resistente para el paseo costero. Diseño ergonómico con capacidad para 3-4 personas. Perfecto para disfrutar de la vista al mar.
+                    Plataformas y escenarios para presentaciones artísticas al aire libre. Alta capacidad de carga y excelente acabado superficial.
                   </p>
                   <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
                     <span style={{background: '#e0f2fe', color: '#0369a1', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Resistente a sal</span>
@@ -865,11 +865,11 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease'}}>
-                <div style={{height: '240px', background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative'}}>
-                  <TreePine size={80} style={{color: 'white', opacity: 0.9}} />
-                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(255,255,255,0.2)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                    Próximamente
+              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('Imagen_render_mesas_sillas_jardineras.jpg')}>
+                <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
+                  <img src="/images/Imagen_render_mesas_sillas_jardineras.jpg" alt="Mobiliario Parque de los Novios" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/2291004/pexels-photo-2291004.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
+                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(37, 99, 235, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
+                    Ver diseño
                   </div>
                 </div>
                 <div style={{padding: '1.5rem'}}>
@@ -884,11 +884,11 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease'}}>
-                <div style={{height: '240px', background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative'}}>
-                  <Building2 size={80} style={{color: 'white', opacity: 0.9}} />
-                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(255,255,255,0.2)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                    Próximamente
+              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('kioskos.png')}>
+                <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
+                  <img src="/images/kioskos.png" alt="Casetas y Kioscos de Playa" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
+                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(37, 99, 235, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
+                    Ver diseño
                   </div>
                 </div>
                 <div style={{padding: '1.5rem'}}>
@@ -903,21 +903,21 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease'}}>
-                <div style={{height: '240px', background: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative'}}>
-                  <Music size={80} style={{color: 'white', opacity: 0.9}} />
-                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(255,255,255,0.2)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                    Próximamente
+              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('Parque_de_los_novios-con-mesas-y-sillas.png')}>
+                <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
+                  <img src="/images/Parque_de_los_novios-con-mesas-y-sillas.png" alt="Parque de los Novios en contexto" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
+                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(37, 99, 235, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
+                    Ver ubicación
                   </div>
                 </div>
                 <div style={{padding: '1.5rem'}}>
-                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Decks para Eventos Culturales</h3>
+                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Parque de los Novios - Vista Real</h3>
                   <p style={{color: '#666', lineHeight: '1.6', marginBottom: '1rem'}}>
-                    Plataformas y escenarios para presentaciones artísticas al aire libre. Alta capacidad de carga y excelente acabado superficial.
+                    Visualización del mobiliario integrado al emblemático Parque de los Novios. Diseño que respeta el patrimonio histórico de la ciudad.
                   </p>
                   <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
-                    <span style={{background: '#fce7f3', color: '#9f1239', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Alta resistencia</span>
-                    <span style={{background: '#e0e7ff', color: '#3730a3', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Versátil</span>
+                    <span style={{background: '#fce7f3', color: '#9f1239', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Ubicación real</span>
+                    <span style={{background: '#e0e7ff', color: '#3730a3', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Contexto histórico</span>
                   </div>
                 </div>
               </div>
