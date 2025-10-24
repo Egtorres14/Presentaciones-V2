@@ -846,78 +846,78 @@ const App: React.FC = () => {
 
             <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginTop: '3rem'}}>
 
-              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('Render_plataforma.jpg')}>
+              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('Banquillo-imagen-real.jpg')}>
                 <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
-                  <img src="/images/Render_plataforma.jpg" alt="Decks para eventos culturales" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
-                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(37, 99, 235, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                    Ver diseño
+                  <img src="/images/Banquillo-imagen-real.jpg" alt="Banquillo real instalado" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
+                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(34, 139, 34, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
+                    Proyecto Real
                   </div>
                 </div>
                 <div style={{padding: '1.5rem'}}>
-                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Decks para Eventos Culturales</h3>
+                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Banquillos de WPC</h3>
                   <p style={{color: '#666', lineHeight: '1.6', marginBottom: '1rem'}}>
-                    Plataformas y escenarios para presentaciones artísticas al aire libre. Alta capacidad de carga y excelente acabado superficial.
+                    Banquillos instalados en espacios públicos, fabricados con material compuesto de alta resistencia y bajo mantenimiento.
+                  </p>
+                  <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
+                    <span style={{background: '#dcfce7', color: '#166534', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Instalado</span>
+                    <span style={{background: '#fef3c7', color: '#92400e', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Resistente</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('estructura para playas.jpg')}>
+                <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
+                  <img src="/images/estructura para playas.jpg" alt="Estructura para playas" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/2291004/pexels-photo-2291004.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
+                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(34, 139, 34, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
+                    Proyecto Real
+                  </div>
+                </div>
+                <div style={{padding: '1.5rem'}}>
+                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Kiosco de Playa Modular</h3>
+                  <p style={{color: '#666', lineHeight: '1.6', marginBottom: '1rem'}}>
+                    Estructura modular instalada en zona costera. Ideal para servicios turísticos con máxima resistencia al ambiente marino.
                   </p>
                   <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
                     <span style={{background: '#e0f2fe', color: '#0369a1', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Resistente a sal</span>
-                    <span style={{background: '#fef3c7', color: '#92400e', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Anti-vandálico</span>
+                    <span style={{background: '#dcfce7', color: '#166534', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Implementado</span>
                   </div>
                 </div>
               </div>
 
-              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('Imagen_render_mesas_sillas_jardineras.jpg')}>
+              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('Jardineras-real.jpg')}>
                 <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
-                  <img src="/images/Imagen_render_mesas_sillas_jardineras.jpg" alt="Mobiliario Parque de los Novios" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/2291004/pexels-photo-2291004.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
-                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(37, 99, 235, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                    Ver diseño
+                  <img src="/images/Jardineras-real.jpg" alt="Jardineras reales instaladas" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
+                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(34, 139, 34, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
+                    Proyecto Real
                   </div>
                 </div>
                 <div style={{padding: '1.5rem'}}>
-                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Mobiliario Parque de los Novios</h3>
+                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Jardineras de WPC</h3>
                   <p style={{color: '#666', lineHeight: '1.6', marginBottom: '1rem'}}>
-                    Conjunto de bancas, mesas y jardineras para el icónico parque. Diseño moderno que complementa el ambiente histórico del lugar.
+                    Jardineras modulares instaladas en espacios públicos. Combinan funcionalidad paisajística con materiales sostenibles de larga duración.
                   </p>
                   <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
-                    <span style={{background: '#dcfce7', color: '#166534', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Modular</span>
-                    <span style={{background: '#fce7f3', color: '#9f1239', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Estético</span>
+                    <span style={{background: '#dcfce7', color: '#166534', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Instalado</span>
+                    <span style={{background: '#fce7f3', color: '#9f1239', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Decorativo</span>
                   </div>
                 </div>
               </div>
 
-              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('kioskos.png')}>
+              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('kiosko.jpg')}>
                 <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
-                  <img src="/images/kioskos.png" alt="Casetas y Kioscos de Playa" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
-                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(37, 99, 235, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                    Ver diseño
+                  <img src="/images/kiosko.jpg" alt="Kiosko real instalado" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
+                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(34, 139, 34, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
+                    Proyecto Real
                   </div>
                 </div>
                 <div style={{padding: '1.5rem'}}>
-                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Casetas y Kioscos de Playa</h3>
+                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Kiosko Multifuncional</h3>
                   <p style={{color: '#666', lineHeight: '1.6', marginBottom: '1rem'}}>
-                    Estructuras modulares para servicios turísticos en playas. Incluye opciones para puntos de información, venta y almacenamiento.
+                    Kiosko instalado con estructura completa de WPC. Ofrece protección y funcionalidad para distintos usos en espacios públicos.
                   </p>
                   <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
-                    <span style={{background: '#dbeafe', color: '#1e3a8a', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Modular</span>
-                    <span style={{background: '#fef3c7', color: '#92400e', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Rápida instalación</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('Parque_de_los_novios-con-mesas-y-sillas.png')}>
-                <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
-                  <img src="/images/Parque_de_los_novios-con-mesas-y-sillas.png" alt="Parque de los Novios en contexto" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
-                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(37, 99, 235, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                    Ver ubicación
-                  </div>
-                </div>
-                <div style={{padding: '1.5rem'}}>
-                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Parque de los Novios - Vista Real</h3>
-                  <p style={{color: '#666', lineHeight: '1.6', marginBottom: '1rem'}}>
-                    Visualización del mobiliario integrado al emblemático Parque de los Novios. Diseño que respeta el patrimonio histórico de la ciudad.
-                  </p>
-                  <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
-                    <span style={{background: '#fce7f3', color: '#9f1239', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Ubicación real</span>
-                    <span style={{background: '#e0e7ff', color: '#3730a3', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Contexto histórico</span>
+                    <span style={{background: '#dcfce7', color: '#166534', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Implementado</span>
+                    <span style={{background: '#e0f2fe', color: '#0369a1', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Duradero</span>
                   </div>
                 </div>
               </div>
@@ -926,8 +926,8 @@ const App: React.FC = () => {
 
             <div style={{marginTop: '3rem', padding: '2rem', background: 'rgba(255,255,255,0.1)', borderRadius: '16px', border: '2px solid rgba(255,255,255,0.2)'}}>
               <p style={{color: 'white', fontSize: '1.1rem', textAlign: 'center', margin: 0, lineHeight: '1.8'}}>
-                <strong style={{color: '#FFD700'}}>📸 Próximamente:</strong> Imágenes reales de estos proyectos implementados en Santa Marta.
-                Estamos trabajando en traer estas soluciones sostenibles a nuestra ciudad costera.
+                <strong style={{color: '#FFD700'}}>✓ Proyectos Reales Implementados:</strong> Estos son ejemplos tangibles de mobiliario urbano de WPC ya instalado.
+                Soluciones sostenibles comprobadas listas para adaptarse a espacios públicos de Santa Marta.
               </p>
             </div>
           </div>
