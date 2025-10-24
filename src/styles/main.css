@@ -159,10 +159,10 @@ body {
         left: -300px;
         flex-direction: column;
         background: rgba(15, 23, 42, 0.96);
-        padding: 10px;
-        border-radius: 14px;
-        width: 160px;
-        max-width: 160px;
+        padding: 8px;
+        border-radius: 12px;
+        width: 130px;
+        max-width: 130px;
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -174,7 +174,7 @@ body {
     }
 
     .nav-items.mobile-open {
-        left: 15px;
+        left: 12px;
         opacity: 1;
         visibility: visible;
     }
@@ -182,11 +182,11 @@ body {
     .nav-items a {
         width: 100%;
         text-align: center;
-        padding: 9px 6px;
-        font-size: 0.8rem;
-        margin-bottom: 5px;
+        padding: 7px 4px;
+        font-size: 0.7rem;
+        margin-bottom: 4px;
         background: rgba(30, 41, 59, 0.6);
-        border-radius: 8px;
+        border-radius: 6px;
         border: 1px solid rgba(255, 255, 255, 0.08);
         transition: all 0.2s ease;
         color: rgba(255, 255, 255, 0.9);
@@ -905,6 +905,12 @@ section {
     transform: translateY(0);
 }
 
+@media (max-width: 768px) {
+    .transformacion-section .section-title {
+        text-align: center;
+    }
+}
+
 .wpc-explanation {
     margin-bottom: var(--spacing-xl);
     opacity: 1;
@@ -917,6 +923,12 @@ section {
     line-height: 1.6;
     margin: 0 0 var(--spacing-sm) 0;
     text-align: left;
+}
+
+@media (max-width: 768px) {
+    .wpc-definition {
+        text-align: center;
+    }
     font-weight: 400;
 }
 
@@ -1606,6 +1618,12 @@ section {
   transform: translateY(0);
 }
 
+@media (max-width: 768px) {
+    .impacto-section .section-title {
+        text-align: center;
+    }
+}
+
 .impacto-explanation {
   margin-bottom: var(--spacing-xl);
   opacity: 1;
@@ -1618,6 +1636,12 @@ section {
   line-height: 1.6;
   margin: 0 0 var(--spacing-sm) 0;
   text-align: left;
+}
+
+@media (max-width: 768px) {
+    .impacto-definition {
+        text-align: center;
+    }
   font-weight: 400;
 }
 
@@ -3735,6 +3759,14 @@ section {
 @media (max-width: 768px) {
     .economia-circular-section {
         padding: var(--spacing-xl) 0;
+    }
+
+    .economia-circular-section .section-title {
+        text-align: center;
+    }
+
+    .economia-circular-section .rsc-definition {
+        text-align: center;
     }
 
     .commitment-item {
