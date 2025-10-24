@@ -861,103 +861,105 @@ const App: React.FC = () => {
           id="aplicaciones-urbanas"
           className="aplicaciones-urbanas-section"
           ref={el => el && (sectionsRef.current[4] = el)}
-          style={{background: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)', padding: '5rem 0', minHeight: '100vh'}}
+          style={{background: 'linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #334155 100%)', padding: '5rem 0', minHeight: '100vh', position: 'relative', overflow: 'hidden'}}
         >
-          <div className="container">
-            <h2 className="section-title" style={{color: 'white', textAlign: 'center'}}>Soluciones para Espacios Públicos Urbanos</h2>
-            <p className="section-subtitle" style={{color: 'rgba(255,255,255,0.9)', textAlign: 'center', maxWidth: '800px', margin: '0 auto 1rem'}}>
-              Mobiliario sostenible para Santa Marta: Resistente al ambiente costero, duradero y ecológico
+          <div style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, opacity: 0.05, backgroundImage: 'url(/images/Banner.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+          <div className="container" style={{position: 'relative', zIndex: 1}}>
+            <h2 className="section-title" style={{color: 'white', textAlign: 'center', fontSize: '2.5rem', marginBottom: '1rem'}}>Mobiliario Urbano Implementado</h2>
+            <p className="section-subtitle" style={{color: '#5eead4', textAlign: 'center', maxWidth: '900px', margin: '0 auto 1rem', fontSize: '1.3rem', fontWeight: '500'}}>
+              Transformando residuos plásticos en infraestructura resistente para Santa Marta
             </p>
-            <p style={{color: 'rgba(255,255,255,0.8)', textAlign: 'center', fontSize: '0.95rem', marginBottom: '3rem'}}>
-              <strong style={{color: '#FFD700'}}>✓ Resistente a la sal y humedad marina</strong> •
-              <strong style={{color: '#FFD700'}}> ✓ 3x más duradero que madera tradicional</strong> •
-              <strong style={{color: '#FFD700'}}> ✓ Mínimo mantenimiento</strong>
+            <p style={{color: 'rgba(255,255,255,0.7)', textAlign: 'center', fontSize: '1rem', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem'}}>
+              <strong style={{color: '#10b981'}}>✓ Resistente a la sal y humedad marina</strong> •
+              <strong style={{color: '#10b981'}}> ✓ 3x más duradero que madera tradicional</strong> •
+              <strong style={{color: '#10b981'}}> ✓ Cero mantenimiento</strong>
             </p>
 
             <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginTop: '3rem'}}>
 
-              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('Banquillo-imagen-real.jpg')}>
-                <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
-                  <img src="/images/Banquillo-imagen-real.jpg" alt="Banquillo real instalado" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
-                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(34, 139, 34, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                    Proyecto Real
+              <div className="urban-app-card" style={{background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%)', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 15px 40px rgba(0,0,0,0.4)', transition: 'all 0.3s ease', cursor: 'pointer', border: '1px solid rgba(94, 234, 212, 0.3)'}} onClick={() => openGalleryPopup('Banquillo-imagen-real.jpg')}>
+                <div style={{height: '250px', overflow: 'hidden', position: 'relative'}}>
+                  <img src="/images/Banquillo-imagen-real.jpg" alt="Banquillo real instalado" style={{width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
+                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(16, 185, 129, 0.4)'}}>
+                    ✓ Implementado
                   </div>
                 </div>
-                <div style={{padding: '1.5rem'}}>
-                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Banquillos de WPC</h3>
-                  <p style={{color: '#666', lineHeight: '1.6', marginBottom: '1rem'}}>
+                <div style={{padding: '1.75rem'}}>
+                  <h3 style={{fontSize: '1.5rem', marginBottom: '0.75rem', color: '#0f172a', fontWeight: '700'}}>Banquillos de WPC</h3>
+                  <p style={{color: '#475569', lineHeight: '1.7', marginBottom: '1.25rem', fontSize: '0.95rem'}}>
                     Banquillos instalados en espacios públicos, fabricados con material compuesto de alta resistencia y bajo mantenimiento.
                   </p>
                   <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
-                    <span style={{background: '#dcfce7', color: '#166534', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Instalado</span>
-                    <span style={{background: '#fef3c7', color: '#92400e', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Resistente</span>
+                    <span style={{background: '#d1fae5', color: '#065f46', padding: '0.4rem 0.9rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600'}}>✓ Instalado</span>
+                    <span style={{background: '#e0f2fe', color: '#075985', padding: '0.4rem 0.9rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600'}}>Resistente</span>
                   </div>
                 </div>
               </div>
 
-              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('estructura para playas.jpg')}>
-                <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
-                  <img src="/images/estructura para playas.jpg" alt="Estructura para playas" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/2291004/pexels-photo-2291004.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
-                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(34, 139, 34, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                    Proyecto Real
+              <div className="urban-app-card" style={{background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%)', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 15px 40px rgba(0,0,0,0.4)', transition: 'all 0.3s ease', cursor: 'pointer', border: '1px solid rgba(94, 234, 212, 0.3)'}} onClick={() => openGalleryPopup('estructura para playas.jpg')}>
+                <div style={{height: '250px', overflow: 'hidden', position: 'relative'}}>
+                  <img src="/images/estructura para playas.jpg" alt="Estructura para playas" style={{width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/2291004/pexels-photo-2291004.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
+                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(16, 185, 129, 0.4)'}}>
+                    ✓ Implementado
                   </div>
                 </div>
-                <div style={{padding: '1.5rem'}}>
-                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Kiosco de Playa Modular</h3>
-                  <p style={{color: '#666', lineHeight: '1.6', marginBottom: '1rem'}}>
+                <div style={{padding: '1.75rem'}}>
+                  <h3 style={{fontSize: '1.5rem', marginBottom: '0.75rem', color: '#0f172a', fontWeight: '700'}}>Kiosco de Playa Modular</h3>
+                  <p style={{color: '#475569', lineHeight: '1.7', marginBottom: '1.25rem', fontSize: '0.95rem'}}>
                     Estructura modular instalada en zona costera. Ideal para servicios turísticos con máxima resistencia al ambiente marino.
                   </p>
                   <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
-                    <span style={{background: '#e0f2fe', color: '#0369a1', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Resistente a sal</span>
-                    <span style={{background: '#dcfce7', color: '#166534', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Implementado</span>
+                    <span style={{background: '#ccfbf1', color: '#115e59', padding: '0.4rem 0.9rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600'}}>Anti-sal</span>
+                    <span style={{background: '#d1fae5', color: '#065f46', padding: '0.4rem 0.9rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600'}}>✓ Instalado</span>
                   </div>
                 </div>
               </div>
 
-              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('Jardineras-real.jpg')}>
-                <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
-                  <img src="/images/Jardineras-real.jpg" alt="Jardineras reales instaladas" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
-                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(34, 139, 34, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                    Proyecto Real
+              <div className="urban-app-card" style={{background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%)', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 15px 40px rgba(0,0,0,0.4)', transition: 'all 0.3s ease', cursor: 'pointer', border: '1px solid rgba(94, 234, 212, 0.3)'}} onClick={() => openGalleryPopup('Jardineras-real.jpg')}>
+                <div style={{height: '250px', overflow: 'hidden', position: 'relative'}}>
+                  <img src="/images/Jardineras-real.jpg" alt="Jardineras reales instaladas" style={{width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
+                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(16, 185, 129, 0.4)'}}>
+                    ✓ Implementado
                   </div>
                 </div>
-                <div style={{padding: '1.5rem'}}>
-                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Jardineras de WPC</h3>
-                  <p style={{color: '#666', lineHeight: '1.6', marginBottom: '1rem'}}>
+                <div style={{padding: '1.75rem'}}>
+                  <h3 style={{fontSize: '1.5rem', marginBottom: '0.75rem', color: '#0f172a', fontWeight: '700'}}>Jardineras de WPC</h3>
+                  <p style={{color: '#475569', lineHeight: '1.7', marginBottom: '1.25rem', fontSize: '0.95rem'}}>
                     Jardineras modulares instaladas en espacios públicos. Combinan funcionalidad paisajística con materiales sostenibles de larga duración.
                   </p>
                   <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
-                    <span style={{background: '#dcfce7', color: '#166534', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Instalado</span>
-                    <span style={{background: '#fce7f3', color: '#9f1239', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Decorativo</span>
+                    <span style={{background: '#d1fae5', color: '#065f46', padding: '0.4rem 0.9rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600'}}>✓ Instalado</span>
+                    <span style={{background: '#fce7f3', color: '#9f1239', padding: '0.4rem 0.9rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600'}}>Paisajismo</span>
                   </div>
                 </div>
               </div>
 
-              <div className="urban-app-card" style={{background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease', cursor: 'pointer'}} onClick={() => openGalleryPopup('kiosko.jpg')}>
-                <div style={{height: '240px', overflow: 'hidden', position: 'relative'}}>
-                  <img src="/images/kiosko.jpg" alt="Kiosko real instalado" style={{width: '100%', height: '100%', objectFit: 'cover'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
-                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(34, 139, 34, 0.9)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                    Proyecto Real
+              <div className="urban-app-card" style={{background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%)', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 15px 40px rgba(0,0,0,0.4)', transition: 'all 0.3s ease', cursor: 'pointer', border: '1px solid rgba(94, 234, 212, 0.3)'}} onClick={() => openGalleryPopup('kiosko.jpg')}>
+                <div style={{height: '250px', overflow: 'hidden', position: 'relative'}}>
+                  <img src="/images/kiosko.jpg" alt="Kiosko real instalado" style={{width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease'}} onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=800'; }} />
+                  <div style={{position: 'absolute', top: '1rem', right: '1rem', background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', padding: '0.5rem 1rem', borderRadius: '20px', color: 'white', fontSize: '0.85rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(16, 185, 129, 0.4)'}}>
+                    ✓ Implementado
                   </div>
                 </div>
-                <div style={{padding: '1.5rem'}}>
-                  <h3 style={{fontSize: '1.4rem', marginBottom: '0.5rem', color: '#1e3a8a'}}>Kiosko Multifuncional</h3>
-                  <p style={{color: '#666', lineHeight: '1.6', marginBottom: '1rem'}}>
+                <div style={{padding: '1.75rem'}}>
+                  <h3 style={{fontSize: '1.5rem', marginBottom: '0.75rem', color: '#0f172a', fontWeight: '700'}}>Kiosko Multifuncional</h3>
+                  <p style={{color: '#475569', lineHeight: '1.7', marginBottom: '1.25rem', fontSize: '0.95rem'}}>
                     Kiosko instalado con estructura completa de WPC. Ofrece protección y funcionalidad para distintos usos en espacios públicos.
                   </p>
                   <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
-                    <span style={{background: '#dcfce7', color: '#166534', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Implementado</span>
-                    <span style={{background: '#e0f2fe', color: '#0369a1', padding: '0.25rem 0.75rem', borderRadius: '12px', fontSize: '0.85rem'}}>Duradero</span>
+                    <span style={{background: '#d1fae5', color: '#065f46', padding: '0.4rem 0.9rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600'}}>✓ Instalado</span>
+                    <span style={{background: '#e0f2fe', color: '#075985', padding: '0.4rem 0.9rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600'}}>Duradero</span>
                   </div>
                 </div>
               </div>
 
             </div>
 
-            <div style={{marginTop: '3rem', padding: '2rem', background: 'rgba(255,255,255,0.1)', borderRadius: '16px', border: '2px solid rgba(255,255,255,0.2)'}}>
-              <p style={{color: 'white', fontSize: '1.1rem', textAlign: 'center', margin: 0, lineHeight: '1.8'}}>
-                <strong style={{color: '#FFD700'}}>✓ Proyectos Reales Implementados:</strong> Estos son ejemplos tangibles de mobiliario urbano de WPC ya instalado.
-                Soluciones sostenibles comprobadas listas para adaptarse a espacios públicos de Santa Marta.
+            <div style={{marginTop: '3rem', padding: '2.5rem', background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.15) 100%)', borderRadius: '20px', border: '2px solid rgba(94, 234, 212, 0.4)', backdropFilter: 'blur(10px)'}}>
+              <p style={{color: 'white', fontSize: '1.2rem', textAlign: 'center', margin: 0, lineHeight: '1.9', fontWeight: '400'}}>
+                <strong style={{color: '#5eead4', fontSize: '1.3rem'}}>✓ Proyectos Reales Implementados</strong>
+                <br/><br/>
+                <span style={{color: 'rgba(255,255,255,0.9)'}}>Estos son ejemplos tangibles de mobiliario urbano de WPC ya instalado y funcionando. Soluciones sostenibles comprobadas, listas para transformar los espacios públicos de Santa Marta.</span>
               </p>
             </div>
           </div>
