@@ -661,10 +661,11 @@ const App: React.FC = () => {
         </section>
 
         {/* SECCIÓN 3: TRANSFORMACIÓN */}
-        <section 
-          id="transformacion" 
+        <section
+          id="transformacion"
           className="transformacion-section"
           ref={el => el && (sectionsRef.current[2] = el)}
+          style={{minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '4rem 0 2rem 0'}}
         >
           <div className="contact-watermark">
             <div className="watermark-content">
@@ -673,97 +674,153 @@ const App: React.FC = () => {
               <p className="watermark-email">jfvelasq@yahoo.com</p>
             </div>
           </div>
-          <div className="container">
-            <div className="two-columns">
-              <div className="content-column">
-                <h2 className="section-title">La Transformación</h2>
-                
-                <div className="wpc-explanation">
-                  <p className="wpc-definition">
-                    Los <strong>compuestos de plástico-madera (WPC)</strong> son materiales híbridos que combinan fibras naturales con termoplásticos, creando <span className="highlight-text">materiales de construcción superiores</span>.
-                  </p>
-                  <p className="wpc-context">
-                    Nuestro proceso innovador transforma <strong>tres fuentes de residuos</strong> en recursos valiosos para construcciones rurales y urbanas.
-                  </p>
-                </div>
+          <div className="container" style={{maxWidth: '1400px', margin: '0 auto', width: '100%'}}>
+            <h2 className="section-title slide-up visible" style={{marginBottom: '1rem', fontSize: '2.2rem', paddingRight: '180px'}}>
+              La Solución: Tecnología WPC
+            </h2>
+            <p style={{fontSize: '1rem', color: '#475569', marginBottom: '2rem', paddingRight: '180px', lineHeight: '1.6'}}>
+              <strong>Compuestos de Plástico-Madera (WPC):</strong> Materiales híbridos que transforman residuos en infraestructura sostenible de alta calidad.
+            </p>
 
-                <div className="material-sources" style={{marginTop: '2rem', marginBottom: '2rem'}}>
-                  <h3 style={{fontSize: '1.3rem', marginBottom: '1.5rem', color: '#228B22'}}>Múltiples Fuentes de Material</h3>
-                  <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem'}}>
-                    <div style={{padding: '1.5rem', background: 'rgba(139, 69, 19, 0.1)', borderRadius: '12px', border: '2px solid rgba(139, 69, 19, 0.3)'}}>
-                      <Coffee size={36} style={{color: '#8B4513', marginBottom: '0.5rem'}} />
-                      <h4 style={{fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem'}}>Cisco de Café</h4>
-                      <p style={{fontSize: '0.9rem', lineHeight: '1.6'}}>Residuo agrícola de comunidades cafeteras. <strong>55%</strong> del material en aplicaciones rurales.</p>
-                    </div>
-                    <div style={{padding: '1.5rem', background: 'rgba(30, 144, 255, 0.1)', borderRadius: '12px', border: '2px solid rgba(30, 144, 255, 0.3)'}}>
-                      <Waves size={36} style={{color: '#1E90FF', marginBottom: '0.5rem'}} />
-                      <h4 style={{fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem'}}>Madera Marina</h4>
-                      <p style={{fontSize: '0.9rem', lineHeight: '1.6'}}>Recuperada de costas y mares mediante proyectos de limpieza. <strong>Evitamos contaminación</strong> oceánica.</p>
-                    </div>
-                    <div style={{padding: '1.5rem', background: 'rgba(255, 99, 71, 0.1)', borderRadius: '12px', border: '2px solid rgba(255, 99, 71, 0.3)'}}>
-                      <Recycle size={36} style={{color: '#FF6347', marginBottom: '0.5rem'}} />
-                      <h4 style={{fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem'}}>Plástico HDPE</h4>
-                      <p style={{fontSize: '0.9rem', lineHeight: '1.6'}}>Polietileno de alta densidad reciclado de residuos urbanos. <strong>Colaboración</strong> con recicladores locales.</p>
+            <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'start'}}>
+
+              {/* COLUMNA IZQUIERDA: SOLUCIÓN URBANA (PRIORIDAD) */}
+              <div className="slide-up visible">
+                <div style={{background: 'linear-gradient(135deg, #0f766e 0%, #14b8a6 100%)', padding: '1.5rem', borderRadius: '16px', marginBottom: '1rem', boxShadow: '0 8px 24px rgba(15, 118, 110, 0.3)'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem'}}>
+                    <Building2 size={40} style={{color: '#5eead4'}} />
+                    <div>
+                      <h3 style={{color: 'white', fontSize: '1.5rem', margin: 0}}>Mobiliario Urbano Costero</h3>
+                      <p style={{color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', margin: '0.25rem 0 0 0'}}>Madera Marina + HDPE Reciclado</p>
                     </div>
                   </div>
-                  <div style={{marginTop: '1.5rem', padding: '1rem', background: 'rgba(34, 139, 34, 0.15)', borderRadius: '8px', borderLeft: '4px solid #228B22'}}>
-                    <p style={{fontSize: '0.95rem', lineHeight: '1.6', margin: 0}}>
-                      <strong>✅ Triple Impacto:</strong> Valorizamos residuos agrícolas, limpiamos nuestros océanos y reducimos basura urbana, todo en un solo proceso de transformación.
+
+                  <div style={{background: 'rgba(255,255,255,0.15)', padding: '1rem', borderRadius: '12px', marginBottom: '1rem'}}>
+                    <p style={{color: 'white', fontSize: '0.9rem', lineHeight: '1.5', margin: 0}}>
+                      Recuperamos madera del mar y combinamos con plástico HDPE urbano para crear mobiliario resistente al ambiente marino.
                     </p>
                   </div>
-                </div>
 
-                <div className="wpc-stats-container">
-                  <div className="wpc-stat-item">
-                    <div className="stat-visual">
-                      <Recycle size={48} className="stat-icon recycle-icon" />
+                  <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem'}}>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.1)', borderRadius: '8px'}}>
+                      <Shield size={24} style={{color: '#5eead4', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.2rem', fontWeight: 'bold', margin: '0.15rem 0'}}>3x</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>más duradero</p>
                     </div>
-                    <div className="stat-text">
-                      <span className="stat-number">100%</span>
-                      <p>Aprovechamiento del cisco</p>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.1)', borderRadius: '8px'}}>
+                      <Waves size={24} style={{color: '#5eead4', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.2rem', fontWeight: 'bold', margin: '0.15rem 0'}}>100%</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>resistente sal</p>
                     </div>
-                  </div>
-
-                  <div className="wpc-stat-item">
-                    <div className="stat-visual">
-                      <Shield size={48} className="stat-icon durability-icon" />
-                    </div>
-                    <div className="stat-text">
-                      <span className="stat-number">3x</span>
-                      <p>Más duradero que madera tradicional</p>
-                    </div>
-                  </div>
-
-                  <div className="wpc-stat-item">
-                    <div className="stat-visual">
-                      <TrendingDown size={48} className="stat-icon cost-icon" />
-                    </div>
-                    <div className="stat-text">
-                      <span className="stat-number">35%</span>
-                      <p>Reducción de costos</p>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.1)', borderRadius: '8px'}}>
+                      <Zap size={24} style={{color: '#5eead4', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.2rem', fontWeight: 'bold', margin: '0.15rem 0'}}>0%</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>mantenimiento</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="wpc-benefits-summary">
-                  <p>Esta innovación no solo soluciona el problema del cisco, sino que proporciona materiales de construcción de alta calidad a precios accesibles para las comunidades cafeteras.</p>
+                {/* Aplicaciones Urbanas */}
+                <div style={{background: 'rgba(15, 118, 110, 0.1)', padding: '1rem', borderRadius: '12px', border: '2px solid rgba(15, 118, 110, 0.3)'}}>
+                  <h4 style={{fontSize: '1rem', fontWeight: 'bold', color: '#0f766e', margin: '0 0 0.75rem 0'}}>Aplicaciones Principales</h4>
+                  <div style={{display: 'grid', gap: '0.5rem'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#14b8a6', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Bancas y mobiliario de malecón</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#14b8a6', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Kioscos y estructuras de playa</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#14b8a6', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Decks para eventos culturales</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#14b8a6', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Jardineras y elementos decorativos</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="image-column">
-                <div className="transformation-showcase">
-                  <img 
-                    src="/images/imagen_3.png" 
-                    alt="Transformación de cisco a WPC" 
-                    className="wpc-transformation-image"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=800';
-                    }}
-                  />
-                  <div className="showcase-caption">
-                    <p>Del residuo de café a material de construcción de alta calidad</p>
+              {/* COLUMNA DERECHA: SOLUCIÓN RURAL (SECUNDARIA) */}
+              <div className="slide-up visible">
+                <div style={{background: 'linear-gradient(135deg, #92400e 0%, #c2410c 100%)', padding: '1.5rem', borderRadius: '16px', marginBottom: '1rem', boxShadow: '0 8px 24px rgba(146, 64, 14, 0.3)'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem'}}>
+                    <Home size={40} style={{color: '#fdba74'}} />
+                    <div>
+                      <h3 style={{color: 'white', fontSize: '1.5rem', margin: 0}}>Viviendas Rurales</h3>
+                      <p style={{color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', margin: '0.25rem 0 0 0'}}>Cisco de Café + HDPE</p>
+                    </div>
+                  </div>
+
+                  <div style={{background: 'rgba(255,255,255,0.15)', padding: '1rem', borderRadius: '12px', marginBottom: '1rem'}}>
+                    <p style={{color: 'white', fontSize: '0.9rem', lineHeight: '1.5', margin: 0}}>
+                      Aprovechamos el cisco de café local mezclado con HDPE para crear materiales de construcción accesibles para comunidades cafeteras.
+                    </p>
+                  </div>
+
+                  <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem'}}>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.1)', borderRadius: '8px'}}>
+                      <TrendingDown size={24} style={{color: '#fdba74', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.2rem', fontWeight: 'bold', margin: '0.15rem 0'}}>35%</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>menos costo</p>
+                    </div>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.1)', borderRadius: '8px'}}>
+                      <Recycle size={24} style={{color: '#fdba74', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.2rem', fontWeight: 'bold', margin: '0.15rem 0'}}>100%</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>reciclable</p>
+                    </div>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.1)', borderRadius: '8px'}}>
+                      <Leaf size={24} style={{color: '#fdba74', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.2rem', fontWeight: 'bold', margin: '0.15rem 0'}}>55%</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>cisco café</p>
+                    </div>
                   </div>
                 </div>
+
+                {/* Aplicaciones Rurales */}
+                <div style={{background: 'rgba(146, 64, 14, 0.1)', padding: '1rem', borderRadius: '12px', border: '2px solid rgba(146, 64, 14, 0.3)'}}>
+                  <h4 style={{fontSize: '1rem', fontWeight: 'bold', color: '#92400e', margin: '0 0 0.75rem 0'}}>Componentes de Vivienda</h4>
+                  <div style={{display: 'grid', gap: '0.5rem'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#c2410c', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Pisos y techos de bajo costo</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#c2410c', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Paredes y divisiones internas</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#c2410c', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Puertas y ventanas resistentes</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#c2410c', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Mobiliario básico del hogar</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* BENEFICIOS UNIFICADOS */}
+            <div className="slide-up visible" style={{marginTop: '1.5rem', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem'}}>
+              <div style={{padding: '1rem', background: 'rgba(34, 139, 34, 0.1)', borderRadius: '12px', textAlign: 'center', border: '2px solid rgba(34, 139, 34, 0.3)'}}>
+                <Recycle size={32} style={{color: '#228B22', margin: '0 auto 0.5rem'}} />
+                <p style={{fontSize: '0.95rem', fontWeight: 'bold', color: '#1e293b', margin: '0.25rem 0'}}>Economía Circular</p>
+                <p style={{fontSize: '0.8rem', color: '#64748b', margin: 0}}>Triple valorización de residuos</p>
+              </div>
+              <div style={{padding: '1rem', background: 'rgba(37, 99, 235, 0.1)', borderRadius: '12px', textAlign: 'center', border: '2px solid rgba(37, 99, 235, 0.3)'}}>
+                <Shield size={32} style={{color: '#2563eb', margin: '0 auto 0.5rem'}} />
+                <p style={{fontSize: '0.95rem', fontWeight: 'bold', color: '#1e293b', margin: '0.25rem 0'}}>Alta Durabilidad</p>
+                <p style={{fontSize: '0.8rem', color: '#64748b', margin: 0}}>Resistente a agua, sol y termitas</p>
+              </div>
+              <div style={{padding: '1rem', background: 'rgba(34, 197, 94, 0.1)', borderRadius: '12px', textAlign: 'center', border: '2px solid rgba(34, 197, 94, 0.3)'}}>
+                <DollarSign size={32} style={{color: '#22c55e', margin: '0 auto 0.5rem'}} />
+                <p style={{fontSize: '0.95rem', fontWeight: 'bold', color: '#1e293b', margin: '0.25rem 0'}}>Accesible</p>
+                <p style={{fontSize: '0.8rem', color: '#64748b', margin: 0}}>Hasta 35% más económico</p>
               </div>
             </div>
           </div>
