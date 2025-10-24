@@ -497,20 +497,22 @@ const App: React.FC = () => {
         <a href="#economia-circular" className={currentSection === 6 ? 'active' : ''}>RSC</a>
       </nav>
 
+      {/* MARCA DE AGUA FIJA */}
+      <div className="contact-watermark">
+        <div className="watermark-content">
+          <p className="watermark-name">Juan Velásquez</p>
+          <p className="watermark-phone">3104290020</p>
+          <p className="watermark-email">jfvelasq@yahoo.com</p>
+        </div>
+      </div>
+
       <main>
         {/* SECCIÓN 1: HERO */}
-        <section 
-          id="hero" 
+        <section
+          id="hero"
           className="hero-section"
           ref={el => el && (sectionsRef.current[0] = el)}
         >
-          <div className="contact-watermark">
-            <div className="watermark-content">
-              <p className="watermark-name">Juan Velásquez</p>
-              <p className="watermark-phone">3104290020</p>
-              <p className="watermark-email">jfvelasq@yahoo.com</p>
-            </div>
-          </div>
           <div className="hero-background">
             <img
               src="/images/Banner.png"
@@ -547,13 +549,6 @@ const App: React.FC = () => {
           ref={el => el && (sectionsRef.current[1] = el)}
           style={{minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '4rem 0 2rem 0'}}
         >
-          <div className="contact-watermark">
-            <div className="watermark-content">
-              <p className="watermark-name">Juan Velásquez</p>
-              <p className="watermark-phone">3104290020</p>
-              <p className="watermark-email">jfvelasq@yahoo.com</p>
-            </div>
-          </div>
           <div className="container" style={{maxWidth: '1400px', margin: '0 auto', width: '100%'}}>
             <h2 className="section-title slide-up visible" style={{marginBottom: '1.5rem', fontSize: '2.2rem', paddingRight: '180px'}}>
               El Desafío Ambiental: De Residuos a Recursos
@@ -667,13 +662,6 @@ const App: React.FC = () => {
           ref={el => el && (sectionsRef.current[2] = el)}
           style={{minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '4rem 0 2rem 0'}}
         >
-          <div className="contact-watermark">
-            <div className="watermark-content">
-              <p className="watermark-name">Juan Velásquez</p>
-              <p className="watermark-phone">3104290020</p>
-              <p className="watermark-email">jfvelasq@yahoo.com</p>
-            </div>
-          </div>
           <div className="container" style={{maxWidth: '1400px', margin: '0 auto', width: '100%'}}>
             <h2 className="section-title slide-up visible" style={{marginBottom: '1rem', fontSize: '2.2rem', paddingRight: '180px'}}>
               La Solución: Tecnología WPC
@@ -832,13 +820,6 @@ const App: React.FC = () => {
           className="galeria-section"
           ref={el => el && (sectionsRef.current[3] = el)}
         >
-          <div className="contact-watermark">
-            <div className="watermark-content">
-              <p className="watermark-name">Juan Velásquez</p>
-              <p className="watermark-phone">3104290020</p>
-              <p className="watermark-email">jfvelasq@yahoo.com</p>
-            </div>
-          </div>
           <div className="container">
             <h2 className="section-title">Galería de Aplicaciones Urbanas</h2>
             <p className="section-subtitle">Visualiza el mobiliario sostenible para espacios públicos de Santa Marta</p>
@@ -882,13 +863,6 @@ const App: React.FC = () => {
           ref={el => el && (sectionsRef.current[4] = el)}
           style={{background: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)', padding: '5rem 0', minHeight: '100vh'}}
         >
-          <div className="contact-watermark">
-            <div className="watermark-content">
-              <p className="watermark-name">Juan Velásquez</p>
-              <p className="watermark-phone">3104290020</p>
-              <p className="watermark-email">jfvelasq@yahoo.com</p>
-            </div>
-          </div>
           <div className="container">
             <h2 className="section-title" style={{color: 'white', textAlign: 'center'}}>Soluciones para Espacios Públicos Urbanos</h2>
             <p className="section-subtitle" style={{color: 'rgba(255,255,255,0.9)', textAlign: 'center', maxWidth: '800px', margin: '0 auto 1rem'}}>
@@ -996,13 +970,6 @@ const App: React.FC = () => {
           ref={el => el && (sectionsRef.current[5] = el)}
           style={{minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '4rem 0 2rem 0'}}
         >
-          <div className="contact-watermark">
-            <div className="watermark-content">
-              <p className="watermark-name">Juan Velásquez</p>
-              <p className="watermark-phone">3104290020</p>
-              <p className="watermark-email">jfvelasq@yahoo.com</p>
-            </div>
-          </div>
           <div className="container" style={{maxWidth: '1400px', margin: '0 auto', width: '100%'}}>
             <h2 className="section-title slide-up visible" style={{marginBottom: '1rem', fontSize: '2.2rem', paddingRight: '180px'}}>
               Impacto Social: Doble Beneficio
@@ -1159,13 +1126,6 @@ const App: React.FC = () => {
           ref={el => el && (sectionsRef.current[6] = el)}
           style={{minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '4rem 0 2rem 0'}}
         >
-          <div className="contact-watermark">
-            <div className="watermark-content">
-              <p className="watermark-name">Juan Velásquez</p>
-              <p className="watermark-phone">3104290020</p>
-              <p className="watermark-email">jfvelasq@yahoo.com</p>
-            </div>
-          </div>
           <div className="container" style={{maxWidth: '1400px', margin: '0 auto', width: '100%'}}>
             <h2 className="section-title slide-up visible" style={{marginBottom: '1rem', fontSize: '2.2rem', paddingRight: '180px'}}>
               Responsabilidad Social y Ambiental
