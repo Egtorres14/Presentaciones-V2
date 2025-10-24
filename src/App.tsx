@@ -994,6 +994,7 @@ const App: React.FC = () => {
           id="impacto"
           className="impacto-section"
           ref={el => el && (sectionsRef.current[5] = el)}
+          style={{minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '4rem 0 2rem 0'}}
         >
           <div className="contact-watermark">
             <div className="watermark-content">
@@ -1002,97 +1003,151 @@ const App: React.FC = () => {
               <p className="watermark-email">jfvelasq@yahoo.com</p>
             </div>
           </div>
-          <div className="container">
-            <div className="two-columns">
-              <div className="content-column">
-                <h2 className="section-title">Impacto Social: Dual</h2>
+          <div className="container" style={{maxWidth: '1400px', margin: '0 auto', width: '100%'}}>
+            <h2 className="section-title slide-up visible" style={{marginBottom: '1rem', fontSize: '2.2rem', paddingRight: '180px'}}>
+              Impacto Social: Doble Beneficio
+            </h2>
+            <p style={{fontSize: '1rem', color: '#475569', marginBottom: '2rem', paddingRight: '180px', lineHeight: '1.6'}}>
+              Transformamos residuos en oportunidades económicas para ciudades y comunidades rurales.
+            </p>
 
-                <div className="impacto-explanation">
-                  <p className="impacto-definition">
-                    Nuestra iniciativa <strong>transforma vidas y ciudades</strong> al convertir residuos rurales y urbanos en oportunidades económicas.
-                  </p>
-                  <p className="impacto-context">
-                    Generamos beneficios tanto para comunidades cafeteras como para ciudades costeras como Santa Marta.
-                  </p>
-                </div>
+            <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'start'}}>
 
-                <div style={{marginTop: '2rem', marginBottom: '2rem'}}>
-                  <h3 style={{fontSize: '1.3rem', marginBottom: '1rem', color: '#228B22'}}>Impacto Rural</h3>
-                </div>
-
-                <div className="impacto-stats-container">
-                  <div className="impacto-stat-item">
-                    <div className="stat-visual">
-                      <Users size={48} className="stat-icon families-icon" />
-                    </div>
-                    <div className="stat-text">
-                      <span className="stat-number" id="familiesCounter">540,000</span>
-                      <p>familias beneficiadas</p>
+              {/* COLUMNA IZQUIERDA: IMPACTO URBANO (PRIORIDAD) */}
+              <div className="slide-up visible">
+                <div style={{background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)', padding: '1.5rem', borderRadius: '16px', marginBottom: '1rem', boxShadow: '0 8px 24px rgba(30, 64, 175, 0.3)'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem'}}>
+                    <Building2 size={40} style={{color: '#93c5fd'}} />
+                    <div>
+                      <h3 style={{color: 'white', fontSize: '1.5rem', margin: 0}}>Impacto Urbano</h3>
+                      <p style={{color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', margin: '0.25rem 0 0 0'}}>Santa Marta y Costa Caribe</p>
                     </div>
                   </div>
 
-                  <div className="impacto-stat-item">
-                    <div className="stat-visual">
-                      <DollarSign size={48} className="stat-icon cost-icon" />
+                  <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem', marginBottom: '1rem'}}>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px'}}>
+                      <Waves size={24} style={{color: '#93c5fd', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.3rem', fontWeight: 'bold', margin: '0.15rem 0'}}>2,500</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>ton basura/año evitadas</p>
                     </div>
-                    <div className="stat-text">
-                      <span className="stat-number" id="costReductionCounter">35%</span>
-                      <p>reducción en costos de construcción</p>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px'}}>
+                      <Recycle size={24} style={{color: '#93c5fd', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.3rem', fontWeight: 'bold', margin: '0.15rem 0'}}>3,800</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>ton HDPE/mes</p>
+                    </div>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px'}}>
+                      <Shield size={24} style={{color: '#93c5fd', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.3rem', fontWeight: 'bold', margin: '0.15rem 0'}}>85%</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>+ durabilidad</p>
                     </div>
                   </div>
 
-                  <div className="impacto-stat-item">
-                    <div className="stat-visual">
-                      <TreePine size={48} className="stat-icon environmental-icon" />
-                    </div>
-                    <div className="stat-text">
-                      <span className="stat-number" id="co2Counter">78,000</span>
-                      <p>toneladas de CO₂ evitadas anualmente</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="impacto-summary">
-                  <p>Al aprovechar el cisco, generamos un círculo virtuoso: las familias cafeteras reducen sus costos de vivienda en un <span className="highlight-number">35%</span> mientras contribuyen a la sostenibilidad ambiental.</p>
-                </div>
-
-                <div style={{marginTop: '3rem', marginBottom: '1.5rem', paddingTop: '2rem', borderTop: '2px solid rgba(34, 139, 34, 0.3)'}}>
-                  <h3 style={{fontSize: '1.3rem', marginBottom: '1.5rem', color: '#1E90FF'}}>Impacto Urbano</h3>
-                  <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem'}}>
-                    <div style={{padding: '1.5rem', background: 'rgba(30, 144, 255, 0.1)', borderRadius: '12px', textAlign: 'center'}}>
-                      <Waves size={40} style={{color: '#1E90FF', margin: '0 auto 0.5rem'}} />
-                      <p style={{fontSize: '2rem', fontWeight: 'bold', color: '#1E90FF', margin: '0.5rem 0'}}>2,500</p>
-                      <p style={{fontSize: '0.9rem'}}>toneladas de basura evitadas en el mar anualmente</p>
-                    </div>
-                    <div style={{padding: '1.5rem', background: 'rgba(255, 215, 0, 0.15)', borderRadius: '12px', textAlign: 'center'}}>
-                      <Building2 size={40} style={{color: '#DAA520', margin: '0 auto 0.5rem'}} />
-                      <p style={{fontSize: '2rem', fontWeight: 'bold', color: '#DAA520', margin: '0.5rem 0'}}>85%</p>
-                      <p style={{fontSize: '0.9rem'}}>mejora en durabilidad vs. mobiliario tradicional costero</p>
-                    </div>
-                    <div style={{padding: '1.5rem', background: 'rgba(34, 139, 34, 0.1)', borderRadius: '12px', textAlign: 'center'}}>
-                      <Recycle size={40} style={{color: '#228B22', margin: '0 auto 0.5rem'}} />
-                      <p style={{fontSize: '2rem', fontWeight: 'bold', color: '#228B22', margin: '0.5rem 0'}}>3,800</p>
-                      <p style={{fontSize: '0.9rem'}}>toneladas de HDPE reciclado mensualmente</p>
-                    </div>
-                  </div>
-                  <div style={{marginTop: '1.5rem', padding: '1rem', background: 'rgba(30, 144, 255, 0.1)', borderRadius: '8px', borderLeft: '4px solid #1E90FF'}}>
-                    <p style={{fontSize: '0.95rem', lineHeight: '1.6'}}>
-                      <strong>Santa Marta se posiciona como ciudad líder en sostenibilidad:</strong> Embellecemos espacios públicos, protegemos nuestras costas y fortalecemos el turismo ecológico.
+                  <div style={{padding: '0.75rem', background: 'rgba(59, 130, 246, 0.3)', borderRadius: '8px', borderLeft: '4px solid #60a5fa'}}>
+                    <p style={{color: 'white', fontSize: '0.85rem', margin: 0, lineHeight: '1.4'}}>
+                      <strong>Santa Marta Líder:</strong> Embellecemos espacios públicos, protegemos costas y fortalecemos turismo ecológico.
                     </p>
                   </div>
                 </div>
+
+                {/* Beneficios Urbanos */}
+                <div style={{background: 'rgba(30, 64, 175, 0.1)', padding: '1rem', borderRadius: '12px', border: '2px solid rgba(30, 64, 175, 0.3)'}}>
+                  <h4 style={{fontSize: '1rem', fontWeight: 'bold', color: '#1e40af', margin: '0 0 0.75rem 0'}}>Beneficios Clave</h4>
+                  <div style={{display: 'grid', gap: '0.5rem'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#3b82f6', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Protección y limpieza marina</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#3b82f6', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Mobiliario público duradero</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#3b82f6', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Turismo sostenible potenciado</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#3b82f6', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Empleo en recolección y reciclaje</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#3b82f6', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Ciudad modelo en sostenibilidad</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="image-column">
-                <img 
-                  src="/images/imagen_5.png" 
-                  alt="Impacto social en comunidades cafeteras" 
-                  className="impacto-image zoom-effect"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=800';
-                  }}
-                />
+              {/* COLUMNA DERECHA: IMPACTO RURAL (SECUNDARIO) */}
+              <div className="slide-up visible">
+                <div style={{background: 'linear-gradient(135deg, #78350f 0%, #92400e 100%)', padding: '1.5rem', borderRadius: '16px', marginBottom: '1rem', boxShadow: '0 8px 24px rgba(120, 53, 15, 0.3)'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem'}}>
+                    <Users size={40} style={{color: '#fdba74'}} />
+                    <div>
+                      <h3 style={{color: 'white', fontSize: '1.5rem', margin: 0}}>Impacto Rural</h3>
+                      <p style={{color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', margin: '0.25rem 0 0 0'}}>Comunidades cafeteras</p>
+                    </div>
+                  </div>
+
+                  <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem', marginBottom: '1rem'}}>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px'}}>
+                      <Users size={24} style={{color: '#fdba74', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.3rem', fontWeight: 'bold', margin: '0.15rem 0'}}>540K</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>familias</p>
+                    </div>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px'}}>
+                      <DollarSign size={24} style={{color: '#fdba74', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.3rem', fontWeight: 'bold', margin: '0.15rem 0'}}>35%</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>ahorro</p>
+                    </div>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px'}}>
+                      <TreePine size={24} style={{color: '#fdba74', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.3rem', fontWeight: 'bold', margin: '0.15rem 0'}}>78K</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>ton CO₂ evitadas</p>
+                    </div>
+                  </div>
+
+                  <div style={{padding: '0.75rem', background: 'rgba(194, 65, 12, 0.3)', borderRadius: '8px', borderLeft: '4px solid #f97316'}}>
+                    <p style={{color: 'white', fontSize: '0.85rem', margin: 0, lineHeight: '1.4'}}>
+                      <strong>Círculo Virtuoso:</strong> Familias reducen costos en vivienda y contribuyen a sostenibilidad ambiental.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Beneficios Rurales */}
+                <div style={{background: 'rgba(120, 53, 15, 0.1)', padding: '1rem', borderRadius: '12px', border: '2px solid rgba(120, 53, 15, 0.3)'}}>
+                  <h4 style={{fontSize: '1rem', fontWeight: 'bold', color: '#78350f', margin: '0 0 0.75rem 0'}}>Beneficios Clave</h4>
+                  <div style={{display: 'grid', gap: '0.5rem'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#92400e', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Vivienda accesible para cafeteros</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#92400e', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Valorización del cisco de café</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#92400e', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Reducción huella ambiental</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#92400e', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Empleo en procesamiento</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#92400e', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Economía circular cafetera</p>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            {/* IMPACTO GENERAL */}
+            <div className="slide-up visible" style={{marginTop: '1.5rem', padding: '1.25rem', background: 'linear-gradient(135deg, rgba(34, 139, 34, 0.15) 0%, rgba(22, 163, 74, 0.15) 100%)', borderRadius: '16px', border: '2px solid rgba(34, 139, 34, 0.3)', textAlign: 'center'}}>
+              <Leaf size={36} style={{color: '#228B22', margin: '0 auto 0.5rem'}} />
+              <p style={{fontSize: '1rem', fontWeight: '600', color: '#1e293b', margin: 0, lineHeight: '1.6'}}>
+                <strong style={{color: '#228B22'}}>Impacto Dual Comprobado:</strong> Transformamos desafíos ambientales urbanos y rurales en soluciones económicas sostenibles que benefician a toda la región.
+              </p>
             </div>
           </div>
         </section>
@@ -1102,6 +1157,7 @@ const App: React.FC = () => {
           id="economia-circular"
           className="economia-circular-section"
           ref={el => el && (sectionsRef.current[6] = el)}
+          style={{minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '4rem 0 2rem 0'}}
         >
           <div className="contact-watermark">
             <div className="watermark-content">
@@ -1110,195 +1166,194 @@ const App: React.FC = () => {
               <p className="watermark-email">jfvelasq@yahoo.com</p>
             </div>
           </div>
-          <div className="container">
-            <div className="two-columns">
-              <div className="content-column">
-                <h2 className="section-title">Responsabilidad Social Corporativa</h2>
+          <div className="container" style={{maxWidth: '1400px', margin: '0 auto', width: '100%'}}>
+            <h2 className="section-title slide-up visible" style={{marginBottom: '1rem', fontSize: '2.2rem', paddingRight: '180px'}}>
+              Responsabilidad Social y Ambiental
+            </h2>
+            <p style={{fontSize: '1rem', color: '#475569', marginBottom: '2rem', paddingRight: '180px', lineHeight: '1.6'}}>
+              Compromiso con el desarrollo sostenible y la economía circular triple.
+            </p>
 
-                <div className="rsc-explanation">
-                  <p className="rsc-definition">
-                    Este proyecto materializa la <strong>RSC</strong> al implementar políticas que protegen el medio ambiente y promueven el desarrollo sostenible.
-                  </p>
-                </div>
-
-                <div className="rsc-commitment">
-                  <h3 className="commitment-title">Compromiso Ambiental</h3>
-                  <div className="commitment-items">
-                    <div className="commitment-item">
-                      <div className="commitment-icon">
-                        <Recycle size={36} className="icon-recycle" />
-                      </div>
-                      <div className="commitment-text">
-                        <h4>Economía Circular Triple</h4>
-                        <p>Valorizamos residuos agrícolas, recuperamos madera marina y reciclamos plástico HDPE urbano</p>
-                      </div>
-                    </div>
-
-                    <div className="commitment-item">
-                      <div className="commitment-icon">
-                        <Leaf size={36} className="icon-carbon" />
-                      </div>
-                      <div className="commitment-text">
-                        <h4>Reducción de Huella de Carbono</h4>
-                        <p>Disminución de emisiones de CO₂ entre <strong>40-60%</strong> frente a la madera convencional</p>
-                      </div>
-                    </div>
-
-                    <div className="commitment-item">
-                      <div className="commitment-icon">
-                        <Waves size={36} style={{color: '#1E90FF'}} />
-                      </div>
-                      <div className="commitment-text">
-                        <h4>Protección Marina</h4>
-                        <p>Evitamos que <strong>2,500 toneladas</strong> de basura lleguen al océano anualmente</p>
-                      </div>
-                    </div>
+            {/* ENFOQUE PRINCIPAL: GOBIERNO COMO LÍDER */}
+            <div className="slide-up visible" style={{marginBottom: '2rem', padding: '1.5rem', background: 'linear-gradient(135deg, #1e40af 0%, #2563eb 100%)', borderRadius: '16px', color: 'white', boxShadow: '0 8px 24px rgba(30, 64, 175, 0.3)'}}>
+              <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem'}}>
+                <Building2 size={36} style={{color: '#93c5fd'}} />
+                <h3 style={{fontSize: '1.6rem', margin: 0}}>Santa Marta: Ciudad Líder en Sostenibilidad</h3>
+              </div>
+              <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem'}}>
+                <div style={{display: 'flex', gap: '0.75rem', alignItems: 'start'}}>
+                  <div style={{minWidth: '32px', height: '32px', background: 'rgba(255,255,255,0.2)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>
+                    <Waves size={18} />
+                  </div>
+                  <div>
+                    <h4 style={{fontSize: '0.95rem', marginBottom: '0.25rem', fontWeight: 'bold'}}>Protección Costera</h4>
+                    <p style={{opacity: 0.9, lineHeight: '1.4', fontSize: '0.85rem', margin: 0}}>Limpieza marina y recuperación de residuos para infraestructura urbana.</p>
                   </div>
                 </div>
-
-                <div style={{marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)', borderRadius: '16px', color: 'white'}}>
-                  <h3 style={{fontSize: '1.4rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem'}}>
-                    <Building2 size={32} />
-                    El Gobierno de Santa Marta como Líder en Sostenibilidad
-                  </h3>
-                  <div style={{display: 'grid', gap: '1.5rem'}}>
-                    <div style={{display: 'flex', gap: '1rem', alignItems: 'start'}}>
-                      <div style={{minWidth: '40px', height: '40px', background: 'rgba(255,255,255,0.2)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                        <Waves size={24} />
-                      </div>
-                      <div>
-                        <h4 style={{fontSize: '1.1rem', marginBottom: '0.5rem'}}>Protegemos Nuestras Playas y Mares</h4>
-                        <p style={{opacity: 0.9, lineHeight: '1.6'}}>Mediante proyectos de recolección de madera marina, evitamos contaminación oceánica y generamos recursos para infraestructura urbana.</p>
-                      </div>
-                    </div>
-                    <div style={{display: 'flex', gap: '1rem', alignItems: 'start'}}>
-                      <div style={{minWidth: '40px', height: '40px', background: 'rgba(255,255,255,0.2)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                        <Recycle size={24} />
-                      </div>
-                      <div>
-                        <h4 style={{fontSize: '1.1rem', marginBottom: '0.5rem'}}>Convertimos Basura en Solución Urbana</h4>
-                        <p style={{opacity: 0.9, lineHeight: '1.6'}}>Colaboramos con recicladores locales para transformar plástico HDPE en mobiliario público de alta calidad y durabilidad.</p>
-                      </div>
-                    </div>
-                    <div style={{display: 'flex', gap: '1rem', alignItems: 'start'}}>
-                      <div style={{minWidth: '40px', height: '40px', background: 'rgba(255,255,255,0.2)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                        <Shield size={24} />
-                      </div>
-                      <div>
-                        <h4 style={{fontSize: '1.1rem', marginBottom: '0.5rem'}}>Mostramos Responsabilidad y Liderazgo</h4>
-                        <p style={{opacity: 0.9, lineHeight: '1.6'}}>Posicionamos a Santa Marta como ciudad modelo en sostenibilidad, atrayendo turismo ecológico y mejorando la calidad de vida.</p>
-                      </div>
-                    </div>
-                    <div style={{display: 'flex', gap: '1rem', alignItems: 'start'}}>
-                      <div style={{minWidth: '40px', height: '40px', background: 'rgba(255,215,0,0.3)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                        <Leaf size={24} style={{color: '#FFD700'}} />
-                      </div>
-                      <div>
-                        <h4 style={{fontSize: '1.1rem', marginBottom: '0.5rem'}}>Alineados con Política de Basura Cero</h4>
-                        <p style={{opacity: 0.9, lineHeight: '1.6'}}>Cumplimos objetivos nacionales de reducción de residuos mientras embellecemos espacios públicos como el malecón y el Parque de los Novios.</p>
-                      </div>
-                    </div>
+                <div style={{display: 'flex', gap: '0.75rem', alignItems: 'start'}}>
+                  <div style={{minWidth: '32px', height: '32px', background: 'rgba(255,255,255,0.2)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>
+                    <Recycle size={18} />
+                  </div>
+                  <div>
+                    <h4 style={{fontSize: '0.95rem', marginBottom: '0.25rem', fontWeight: 'bold'}}>Reciclaje Urbano</h4>
+                    <p style={{opacity: 0.9, lineHeight: '1.4', fontSize: '0.85rem', margin: 0}}>Transformación de HDPE en mobiliario público duradero.</p>
                   </div>
                 </div>
+                <div style={{display: 'flex', gap: '0.75rem', alignItems: 'start'}}>
+                  <div style={{minWidth: '32px', height: '32px', background: 'rgba(255,255,255,0.2)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>
+                    <Shield size={18} />
+                  </div>
+                  <div>
+                    <h4 style={{fontSize: '0.95rem', marginBottom: '0.25rem', fontWeight: 'bold'}}>Liderazgo Nacional</h4>
+                    <p style={{opacity: 0.9, lineHeight: '1.4', fontSize: '0.85rem', margin: 0}}>Ciudad modelo en sostenibilidad y turismo ecológico.</p>
+                  </div>
+                </div>
+                <div style={{display: 'flex', gap: '0.75rem', alignItems: 'start'}}>
+                  <div style={{minWidth: '32px', height: '32px', background: 'rgba(255,215,0,0.3)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>
+                    <Leaf size={18} style={{color: '#FFD700'}} />
+                  </div>
+                  <div>
+                    <h4 style={{fontSize: '0.95rem', marginBottom: '0.25rem', fontWeight: 'bold'}}>Basura Cero</h4>
+                    <p style={{opacity: 0.9, lineHeight: '1.4', fontSize: '0.85rem', margin: 0}}>Alineados con política nacional, embellecemos malecón y Parque de los Novios.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                <div className="beneficios-clave">
-                  <h3 className="beneficios-title">Beneficios Clave del Proyecto</h3>
+            <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'start'}}>
 
-                  <div className="beneficio-card">
-                    <div className="beneficio-header">
-                      <TreePine size={28} className="beneficio-icon" />
-                      <h4>Ambientales</h4>
+              {/* COLUMNA IZQUIERDA: ECONOMÍA CIRCULAR URBANA */}
+              <div className="slide-up visible">
+                <div style={{background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)', padding: '1.5rem', borderRadius: '16px', marginBottom: '1rem', boxShadow: '0 8px 24px rgba(5, 150, 105, 0.3)'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem'}}>
+                    <Recycle size={40} style={{color: '#6ee7b7'}} />
+                    <div>
+                      <h3 style={{color: 'white', fontSize: '1.5rem', margin: 0}}>Economía Circular Urbana</h3>
+                      <p style={{color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', margin: '0.25rem 0 0 0'}}>Triple valorización de residuos</p>
                     </div>
-                    <ul className="beneficio-list">
-                      <li>Valorización de residuos agrícolas y urbanos</li>
-                      <li>Reducción de la deforestación</li>
-                      <li>Limpieza de costas y protección marina</li>
-                      <li>Disminución de disposición inadecuada de desechos</li>
-                    </ul>
                   </div>
 
-                  <div className="beneficio-card">
-                    <div className="beneficio-header">
-                      <DollarSign size={28} className="beneficio-icon" />
-                      <h4>Económicos</h4>
+                  <div style={{display: 'grid', gap: '0.75rem'}}>
+                    <div style={{display: 'flex', gap: '0.75rem', padding: '0.75rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px', alignItems: 'center'}}>
+                      <Waves size={24} style={{color: '#6ee7b7'}} />
+                      <div>
+                        <p style={{color: 'white', fontSize: '0.9rem', fontWeight: 'bold', margin: '0 0 0.15rem 0'}}>Madera Marina</p>
+                        <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.8rem', margin: 0}}>2,500 ton/año recuperadas del mar</p>
+                      </div>
                     </div>
-                    <ul className="beneficio-list">
-                      <li>Impulso a la economía circular rural y urbana</li>
-                      <li>Generación de empleo rural y urbano</li>
-                      <li>Producto más durable y de menor mantenimiento</li>
-                      <li>Fortalecimiento del turismo sostenible</li>
-                    </ul>
-                  </div>
-
-                  <div className="beneficio-card">
-                    <div className="beneficio-header">
-                      <Shield size={28} className="beneficio-icon" />
-                      <h4>Respaldo Institucional</h4>
+                    <div style={{display: 'flex', gap: '0.75rem', padding: '0.75rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px', alignItems: 'center'}}>
+                      <Recycle size={24} style={{color: '#6ee7b7'}} />
+                      <div>
+                        <p style={{color: 'white', fontSize: '0.9rem', fontWeight: 'bold', margin: '0 0 0.15rem 0'}}>Plástico HDPE</p>
+                        <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.8rem', margin: 0}}>3,800 ton/mes recicladas</p>
+                      </div>
                     </div>
-                    <ul className="beneficio-list">
-                      <li>Alineado con el Plan Nacional de Desarrollo</li>
-                      <li>Cumple con la política de Basura Cero</li>
-                      <li>Compromiso con un futuro sostenible</li>
-                    </ul>
+                    <div style={{display: 'flex', gap: '0.75rem', padding: '0.75rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px', alignItems: 'center'}}>
+                      <Coffee size={24} style={{color: '#6ee7b7'}} />
+                      <div>
+                        <p style={{color: 'white', fontSize: '0.9rem', fontWeight: 'bold', margin: '0 0 0.15rem 0'}}>Cisco de Café</p>
+                        <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.8rem', margin: 0}}>Complemento para viviendas rurales</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="mensaje-final">
-                  <div className="mensaje-box">
-                    <Recycle size={48} className="mensaje-icon" />
-                    <p className="mensaje-text">
-                      <strong>Convertimos un residuo en una oportunidad,</strong> demostrando un compromiso real con un futuro sostenible.
-                    </p>
+                {/* Beneficios Ambientales */}
+                <div style={{background: 'rgba(5, 150, 105, 0.1)', padding: '1rem', borderRadius: '12px', border: '2px solid rgba(5, 150, 105, 0.3)'}}>
+                  <h4 style={{fontSize: '1rem', fontWeight: 'bold', color: '#059669', margin: '0 0 0.75rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <TreePine size={20} />
+                    Beneficios Ambientales
+                  </h4>
+                  <div style={{display: 'grid', gap: '0.5rem'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#10b981', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Limpieza de costas y océanos</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#10b981', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Reducción 40-60% emisiones CO₂</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#10b981', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Disminución deforestación</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#10b981', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Valorización integral de residuos</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="image-column">
-                <div className="ciclo-showcase">
-                  <img
-                    src="/images/Ciclo_cisco.png"
-                    alt="Ciclo de economía circular del cisco"
-                    className="ciclo-image clickable"
-                    onClick={() => setPopupImage('Ciclo_cisco.png')}
-                    style={{ cursor: 'pointer' }}
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/3850512/pexels-photo-3850512.jpeg?auto=compress&cs=tinysrgb&w=800';
-                    }}
-                  />
-                  <div className="ciclo-caption">
-                    <h4>El Ciclo de Transformación Continua</h4>
-                    <div className="ciclo-steps">
-                      <div className="step-item">
-                        <span className="step-number">1</span>
-                        <p>Recolección de tres fuentes: cisco de café, madera marina y HDPE urbano</p>
-                      </div>
-                      <div className="step-item">
-                        <span className="step-number">2</span>
-                        <p>Procesamiento y combinación con termoplásticos</p>
-                      </div>
-                      <div className="step-item">
-                        <span className="step-number">3</span>
-                        <p>Transformación en material WPC de alta calidad</p>
-                      </div>
-                      <div className="step-item">
-                        <span className="step-number">4</span>
-                        <p>Fabricación dual: viviendas rurales y mobiliario urbano</p>
-                      </div>
-                      <div className="step-item">
-                        <span className="step-number">5</span>
-                        <p>Uso prolongado (3x más duradero) y reciclaje al final de vida útil</p>
-                      </div>
-                      <div className="step-item">
-                        <span className="step-number">6</span>
-                        <p>Reinicio del ciclo: material 100% reciclable</p>
-                      </div>
+              {/* COLUMNA DERECHA: BENEFICIOS SOCIOECONÓMICOS */}
+              <div className="slide-up visible">
+                <div style={{background: 'linear-gradient(135deg, #ca8a04 0%, #eab308 100%)', padding: '1.5rem', borderRadius: '16px', marginBottom: '1rem', boxShadow: '0 8px 24px rgba(202, 138, 4, 0.3)'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem'}}>
+                    <DollarSign size={40} style={{color: '#fef08a'}} />
+                    <div>
+                      <h3 style={{color: 'white', fontSize: '1.5rem', margin: 0}}>Beneficios Económicos</h3>
+                      <p style={{color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', margin: '0.25rem 0 0 0'}}>Desarrollo sostenible regional</p>
+                    </div>
+                  </div>
+
+                  <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem'}}>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px'}}>
+                      <Users size={24} style={{color: '#fef08a', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.2rem', fontWeight: 'bold', margin: '0.15rem 0'}}>Empleo</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>urbano y rural</p>
+                    </div>
+                    <div style={{textAlign: 'center', padding: '0.75rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px'}}>
+                      <TrendingDown size={24} style={{color: '#fef08a', margin: '0 auto 0.25rem'}} />
+                      <p style={{color: 'white', fontSize: '1.2rem', fontWeight: 'bold', margin: '0.15rem 0'}}>-35%</p>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', margin: 0}}>costos vivienda</p>
+                    </div>
+                  </div>
+
+                  <div style={{padding: '0.75rem', background: 'rgba(234, 179, 8, 0.3)', borderRadius: '8px', borderLeft: '4px solid #fde047'}}>
+                    <p style={{color: 'white', fontSize: '0.85rem', margin: 0, lineHeight: '1.4'}}>
+                      <strong>Turismo Sostenible:</strong> Espacios públicos embellecidos atraen turismo ecológico y mejoran calidad de vida.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Respaldo Institucional */}
+                <div style={{background: 'rgba(202, 138, 4, 0.1)', padding: '1rem', borderRadius: '12px', border: '2px solid rgba(202, 138, 4, 0.3)'}}>
+                  <h4 style={{fontSize: '1rem', fontWeight: 'bold', color: '#ca8a04', margin: '0 0 0.75rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <Shield size={20} />
+                    Respaldo Institucional
+                  </h4>
+                  <div style={{display: 'grid', gap: '0.5rem'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#eab308', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Plan Nacional de Desarrollo</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#eab308', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Política de Basura Cero</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#eab308', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Economía circular nacional</p>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <div style={{width: '6px', height: '6px', background: '#eab308', borderRadius: '50%'}}></div>
+                      <p style={{fontSize: '0.85rem', margin: 0}}>Objetivos de desarrollo sostenible</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* MENSAJE FINAL */}
+            <div className="slide-up visible" style={{marginTop: '1.5rem', padding: '1.25rem', background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%)', borderRadius: '16px', border: '2px solid rgba(37, 99, 235, 0.3)', textAlign: 'center'}}>
+              <Recycle size={36} style={{color: '#2563eb', margin: '0 auto 0.5rem'}} />
+              <p style={{fontSize: '1rem', fontWeight: '600', color: '#1e293b', margin: 0, lineHeight: '1.6'}}>
+                <strong style={{color: '#2563eb'}}>De Residuo a Oportunidad:</strong> Compromiso real con un futuro sostenible que transforma desafíos ambientales en prosperidad regional.
+              </p>
+            </div>
           </div>
         </section>
+
       </main>
 
       {/* FOOTER */}
