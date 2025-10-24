@@ -12,7 +12,7 @@ const App: React.FC = () => {
   const [urbanWasteInput, setUrbanWasteInput] = useState<string>('50');
   const [urbanCalculatorResult, setUrbanCalculatorResult] = useState({ benches: 0, shelters: 0, deckMeters: 0 });
   const sectionsRef = useRef<HTMLElement[]>([]);
-  
+
   // Gallery images array for navigation
   const galleryImages = [
     'Render_plataforma.jpg',
@@ -25,6 +25,17 @@ const App: React.FC = () => {
     'galeria_8.jpg',
     'galeria_9.jpg'
   ];
+
+  // Urban images array
+  const urbanImages = [
+    'Banquillo-imagen-real.jpg',
+    'estructura para playas.jpg',
+    'Jardineras-real.jpg',
+    'kiosko.jpg'
+  ];
+
+  // All clickable images combined
+  const allPopupImages = [...galleryImages, ...urbanImages];
 
   useEffect(() => {
     setIsLoaded(true);
@@ -87,40 +98,48 @@ const App: React.FC = () => {
   const setupKeyboardNavigation = () => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const sectionIds = ['hero', 'problema', 'transformacion', 'galeria', 'aplicaciones-urbanas', 'impacto', 'economia-circular'];
-      
-      if (popupImage && galleryImages.includes(popupImage)) {
-        const currentArray = galleryImages;
-        const currentIndex = currentGalleryIndex;
-        
+
+      // Check if a popup is open
+      if (popupImage) {
+        // Navigation within popup
         if (e.key === 'ArrowRight') {
           e.preventDefault();
-          const nextIndex = (currentIndex + 1) % currentArray.length;
-          setCurrentGalleryIndex(nextIndex);
-          setPopupImage(currentArray[nextIndex]);
+          const currentIndex = allPopupImages.indexOf(popupImage);
+          if (currentIndex !== -1) {
+            const nextIndex = (currentIndex + 1) % allPopupImages.length;
+            setCurrentGalleryIndex(nextIndex);
+            setPopupImage(allPopupImages[nextIndex]);
+          }
         } else if (e.key === 'ArrowLeft') {
           e.preventDefault();
-          const prevIndex = currentIndex === 0 ? currentArray.length - 1 : currentIndex - 1;
-          setCurrentGalleryIndex(prevIndex);
-          setPopupImage(currentArray[prevIndex]);
+          const currentIndex = allPopupImages.indexOf(popupImage);
+          if (currentIndex !== -1) {
+            const prevIndex = currentIndex === 0 ? allPopupImages.length - 1 : currentIndex - 1;
+            setCurrentGalleryIndex(prevIndex);
+            setPopupImage(allPopupImages[prevIndex]);
+          }
         } else if (e.key === 'Escape') {
           e.preventDefault();
           closePopup();
         }
       } else {
-        if (e.key === 'ArrowDown' || (e.key === 'ArrowRight' && !popupImage)) {
+        // Navigation between sections (only when popup is NOT open)
+        if (e.key === 'ArrowDown') {
           e.preventDefault();
           const nextSection = Math.min(currentSection + 1, sectionIds.length - 1);
-          if (nextSection < sectionIds.length) {
-            setCurrentSection(nextSection);
-            scrollToSection(sectionIds[nextSection]);
-          }
-        } else if (e.key === 'ArrowUp' || (e.key === 'ArrowLeft' && !popupImage)) {
+          scrollToSection(sectionIds[nextSection]);
+        } else if (e.key === 'ArrowUp') {
           e.preventDefault();
           const prevSection = Math.max(currentSection - 1, 0);
-          if (prevSection >= 0) {
-            setCurrentSection(prevSection);
-            scrollToSection(sectionIds[prevSection]);
-          }
+          scrollToSection(sectionIds[prevSection]);
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          const nextSection = Math.min(currentSection + 1, sectionIds.length - 1);
+          scrollToSection(sectionIds[nextSection]);
+        } else if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          const prevSection = Math.max(currentSection - 1, 0);
+          scrollToSection(sectionIds[prevSection]);
         }
       }
     };
@@ -409,19 +428,39 @@ const App: React.FC = () => {
   };
 
   const openGalleryPopup = (imagePath: string) => {
-    const imageIndex = galleryImages.indexOf(imagePath);
-    
+    // Check in all popup images (gallery + urban)
+    const imageIndex = allPopupImages.indexOf(imagePath);
+
     if (imageIndex !== -1) {
       setCurrentGalleryIndex(imageIndex);
+      setPopupImage(imagePath);
+    } else {
+      // Fallback: just open the image anyway
+      setCurrentGalleryIndex(0);
       setPopupImage(imagePath);
     }
   };
 
   const getPopupCaption = () => {
+    // Urban images captions
+    if (popupImage === 'Banquillo-imagen-real.jpg') {
+      return { title: 'Banquillos de WPC', description: 'Banquillos instalados en espacios públicos, fabricados con material compuesto de alta resistencia' };
+    }
+    if (popupImage === 'estructura para playas.jpg') {
+      return { title: 'Kiosco de Playa Modular', description: 'Estructura modular instalada en zona costera con máxima resistencia al ambiente marino' };
+    }
+    if (popupImage === 'Jardineras-real.jpg') {
+      return { title: 'Jardineras de WPC', description: 'Jardineras modulares que combinan funcionalidad paisajística con materiales sostenibles' };
+    }
+    if (popupImage === 'kiosko.jpg') {
+      return { title: 'Kiosko Multifuncional', description: 'Kiosko con estructura completa de WPC para distintos usos en espacios públicos' };
+    }
+    // Cisco cycle image
     if (popupImage === 'Ciclo_cisco.png') {
       return { title: 'Ciclo de Economía Circular', description: 'Del cisco de café a materiales de construcción y de vuelta al inicio del ciclo' };
     }
-    return { title: 'Proceso de Transformación', description: 'Del cisco de café a materiales de construcción sostenibles' };
+    // Default for gallery images
+    return { title: 'Mobiliario Urbano Sostenible', description: 'Transformando residuos en infraestructura duradera para espacios públicos' };
   };
 
   const closePopup = () => {
