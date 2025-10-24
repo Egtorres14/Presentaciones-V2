@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Coffee, Factory, AlertTriangle, ArrowRight, Home, DollarSign, Leaf, Shield, Zap, Recycle, TrendingDown, Users, TreePine, Building, Hammer, Eye, Waves, Trash2, Anchor, PalmtreeIcon as Palmtree, Building2, Music } from 'lucide-react';
-import './index.css';
+import './styles/main.css';
 
 const App: React.FC = () => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -12,7 +12,6 @@ const App: React.FC = () => {
   const [urbanWasteInput, setUrbanWasteInput] = useState<string>('50');
   const [urbanCalculatorResult, setUrbanCalculatorResult] = useState({ benches: 0, shelters: 0, deckMeters: 0 });
   const sectionsRef = useRef<HTMLElement[]>([]);
-  const currentSectionRef = useRef(0);
 
   // Gallery images array for navigation
   const galleryImages = [
@@ -38,30 +37,19 @@ const App: React.FC = () => {
   // All clickable images combined
   const allPopupImages = [...galleryImages, ...urbanImages];
 
-  // Sync ref with state
-  useEffect(() => {
-    currentSectionRef.current = currentSection;
-  }, [currentSection]);
-
   useEffect(() => {
     setIsLoaded(true);
-
+    
     const cleanupScroll = setupScrollAnimations();
     const cleanupObserver = setupIntersectionObserver();
-
+    const cleanupKeyboard = setupKeyboardNavigation();
+    
     return () => {
       if (cleanupScroll) cleanupScroll();
       if (cleanupObserver) cleanupObserver();
-    };
-  }, []);
-
-  // Setup keyboard navigation with dependency on popupImage
-  useEffect(() => {
-    const cleanupKeyboard = setupKeyboardNavigation();
-    return () => {
       if (cleanupKeyboard) cleanupKeyboard();
     };
-  }, [popupImage]);
+  }, []);
 
   const setupScrollAnimations = () => {
     const handleScroll = () => {
@@ -138,33 +126,29 @@ const App: React.FC = () => {
         // Navigation between sections (only when popup is NOT open)
         if (e.key === 'ArrowDown') {
           e.preventDefault();
-          const current = currentSectionRef.current;
-          const nextSection = Math.min(current + 1, sectionIds.length - 1);
-          if (nextSection !== current) {
+          const nextSection = Math.min(currentSection + 1, sectionIds.length - 1);
+          if (nextSection !== currentSection) {
             setCurrentSection(nextSection);
             scrollToSection(sectionIds[nextSection]);
           }
         } else if (e.key === 'ArrowUp') {
           e.preventDefault();
-          const current = currentSectionRef.current;
-          const prevSection = Math.max(current - 1, 0);
-          if (prevSection !== current) {
+          const prevSection = Math.max(currentSection - 1, 0);
+          if (prevSection !== currentSection) {
             setCurrentSection(prevSection);
             scrollToSection(sectionIds[prevSection]);
           }
         } else if (e.key === 'ArrowRight') {
           e.preventDefault();
-          const current = currentSectionRef.current;
-          const nextSection = Math.min(current + 1, sectionIds.length - 1);
-          if (nextSection !== current) {
+          const nextSection = Math.min(currentSection + 1, sectionIds.length - 1);
+          if (nextSection !== currentSection) {
             setCurrentSection(nextSection);
             scrollToSection(sectionIds[nextSection]);
           }
         } else if (e.key === 'ArrowLeft') {
           e.preventDefault();
-          const current = currentSectionRef.current;
-          const prevSection = Math.max(current - 1, 0);
-          if (prevSection !== current) {
+          const prevSection = Math.max(currentSection - 1, 0);
+          if (prevSection !== currentSection) {
             setCurrentSection(prevSection);
             scrollToSection(sectionIds[prevSection]);
           }
