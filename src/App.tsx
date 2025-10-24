@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Coffee, Factory, AlertTriangle, ArrowRight, Home, DollarSign, Leaf, Shield, Zap, Recycle, TrendingDown, Users, TreePine, Building, Hammer, Eye, Waves, Trash2, Anchor, PalmtreeIcon as Palmtree, Building2, Music } from 'lucide-react';
+import { Coffee, Factory, AlertTriangle, ArrowRight, Home, DollarSign, Leaf, Shield, Zap, Recycle, TrendingDown, Users, TreePine, Building, Hammer, Eye, Waves, Trash2, Anchor, PalmtreeIcon as Palmtree, Building2, Music, Menu, X } from 'lucide-react';
 import './styles/main.css';
 
 const App: React.FC = () => {
@@ -8,6 +8,7 @@ const App: React.FC = () => {
   const [popupImage, setPopupImage] = useState<string | null>(null);
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
   const [ciscoInput, setCiscoInput] = useState<string>('196');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [calculatorResult, setCalculatorResult] = useState({ exact: 0, rounded: 0 });
   const [urbanWasteInput, setUrbanWasteInput] = useState<string>('50');
   const [urbanCalculatorResult, setUrbanCalculatorResult] = useState({ benches: 0, shelters: 0, deckMeters: 0 });
@@ -452,6 +453,11 @@ const App: React.FC = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
     scrollToSection(sectionId);
+    setIsMobileMenuOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const animateGenericSection = (section: HTMLElement) => {
@@ -597,7 +603,11 @@ const App: React.FC = () => {
       </div>
 
       {/* Navigation Menu */}
-      <nav className="nav-items">
+      <button className="mobile-menu-toggle" onClick={toggleMobileMenu} aria-label="Toggle menu">
+        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      <nav className={`nav-items ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
         <a href="#hero" className={currentSection === 0 ? 'active' : ''} onClick={(e) => handleNavClick(e, 'hero')}>Inicio</a>
         <a href="#problema" className={currentSection === 1 ? 'active' : ''} onClick={(e) => handleNavClick(e, 'problema')}>Problema</a>
         <a href="#transformacion" className={currentSection === 2 ? 'active' : ''} onClick={(e) => handleNavClick(e, 'transformacion')}>Solución</a>
