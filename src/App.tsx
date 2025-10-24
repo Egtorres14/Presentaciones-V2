@@ -532,8 +532,8 @@ const App: React.FC = () => {
           <div className="hero-overlay"></div>
           <div className="hero-content">
             <h1 className="hero-title">
-              De residuos a recursos: Transformando comunidades y ciudades.
-              <span className="hero-subtitle">Del cisco de café y residuos urbanos a infraestructura sostenible</span>
+              Transformando Residuos Urbanos en Infraestructura Sostenible
+              <span className="hero-subtitle">Limpieza marina + Reciclaje de plásticos = Mobiliario público duradero para Santa Marta</span>
             </h1>
           </div>
           <div className="scroll-indicator">
