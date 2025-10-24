@@ -541,10 +541,11 @@ const App: React.FC = () => {
         </section>
 
         {/* SECCIÓN 2: PROBLEMA */}
-        <section 
-          id="problema" 
+        <section
+          id="problema"
           className="problema-section"
           ref={el => el && (sectionsRef.current[1] = el)}
+          style={{minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '2rem 0'}}
         >
           <div className="contact-watermark">
             <div className="watermark-content">
@@ -553,109 +554,105 @@ const App: React.FC = () => {
               <p className="watermark-email">jfvelasq@yahoo.com</p>
             </div>
           </div>
-          <div className="container">
-            <div className="two-columns">
-              <div className="content-column">
-                <h2 className="section-title slide-up">El Desafío: Residuos Rurales y Urbanos</h2>
+          <div className="container" style={{maxWidth: '1400px', margin: '0 auto'}}>
+            <h2 className="section-title slide-up" style={{textAlign: 'center', marginBottom: '2rem', fontSize: '2.5rem'}}>El Desafío Ambiental: De Residuos a Recursos</h2>
 
-                <div className="cisco-explanation slide-up">
-                  <p className="cisco-definition">
-                    El <strong>cisco de café</strong> es la cáscara seca que rodea el grano de café.
-                  </p>
-                  <p className="production-context">
-                    Colombia produce <span className="production-number" id="productionCounter">14</span> millones de sacos de café al año, generando aproximadamente <strong id="contador">195,000+</strong> toneladas de cisco.
-                  </p>
-                </div>
+            <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'start'}}>
 
-                <div className="urban-waste-explanation slide-up" style={{marginTop: '2rem'}}>
-                  <p className="urban-definition">
-                    Paralelamente, las <strong>ciudades costeras como Santa Marta</strong> enfrentan desafíos de residuos urbanos y contaminación marina.
-                  </p>
-                  <div className="urban-stats" style={{marginTop: '1.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem'}}>
-                    <div style={{padding: '1rem', background: 'rgba(34, 139, 34, 0.1)', borderRadius: '8px'}}>
-                      <p style={{fontSize: '1.5rem', fontWeight: 'bold', color: '#228B22'}}>~2,500 ton</p>
-                      <p style={{fontSize: '0.9rem'}}>de madera llegan al mar anualmente</p>
+              {/* COLUMNA IZQUIERDA: PROBLEMA URBANO (PRIORIDAD) */}
+              <div className="slide-up">
+                <div style={{background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)', padding: '2rem', borderRadius: '16px', marginBottom: '1.5rem', boxShadow: '0 8px 24px rgba(30, 58, 138, 0.3)'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem'}}>
+                    <Waves size={48} style={{color: '#60A5FA'}} />
+                    <div>
+                      <h3 style={{color: 'white', fontSize: '1.8rem', margin: 0}}>Contaminación Marina</h3>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.95rem', margin: '0.25rem 0 0 0'}}>Santa Marta y la Costa Caribe</p>
                     </div>
-                    <div style={{padding: '1rem', background: 'rgba(34, 139, 34, 0.1)', borderRadius: '8px'}}>
-                      <p style={{fontSize: '1.5rem', fontWeight: 'bold', color: '#228B22'}}>~3,800 ton</p>
-                      <p style={{fontSize: '0.9rem'}}>de plástico HDPE generados mensualmente</p>
+                  </div>
+
+                  <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1.5rem'}}>
+                    <div style={{background: 'rgba(255,255,255,0.15)', padding: '1.25rem', borderRadius: '12px', textAlign: 'center'}}>
+                      <p style={{fontSize: '2.5rem', fontWeight: 'bold', color: '#FFD700', margin: 0}}>~2,500</p>
+                      <p style={{color: 'white', fontSize: '0.9rem', margin: '0.5rem 0 0 0'}}>toneladas de madera al mar/año</p>
                     </div>
+                    <div style={{background: 'rgba(255,255,255,0.15)', padding: '1.25rem', borderRadius: '12px', textAlign: 'center'}}>
+                      <p style={{fontSize: '2.5rem', fontWeight: 'bold', color: '#FF6347', margin: 0}}>~3,800</p>
+                      <p style={{color: 'white', fontSize: '0.9rem', margin: '0.5rem 0 0 0'}}>toneladas HDPE/mes</p>
+                    </div>
+                  </div>
+
+                  <div style={{marginTop: '1.5rem', padding: '1rem', background: 'rgba(239, 68, 68, 0.2)', borderRadius: '8px', borderLeft: '4px solid #EF4444'}}>
+                    <p style={{color: 'white', fontSize: '0.95rem', margin: 0, lineHeight: '1.5'}}>
+                      <strong>Impacto Crítico:</strong> Deterioro del ecosistema marino, afectación del turismo y pérdida de recursos valiosos que pueden transformarse en infraestructura urbana sostenible.
+                    </p>
                   </div>
                 </div>
 
-                <div className="infographics-container">
-                  <div className="infographic-item slide-up">
-                    <div className="infographic-visual">
-                      <Coffee size={48} className="infographic-icon coffee-icon" />
-                    </div>
-                    <div className="infographic-text">
-                      <span className="percentage" id="ciscoPercentage">22</span>
-                      <p>% del peso total del café se convierte en cisco</p>
-                    </div>
+                {/* Estadísticas urbanas compactas */}
+                <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem'}}>
+                  <div style={{background: 'rgba(30, 144, 255, 0.1)', padding: '1rem', borderRadius: '12px', border: '2px solid rgba(30, 144, 255, 0.3)', textAlign: 'center'}}>
+                    <Trash2 size={32} style={{color: '#1E90FF', margin: '0 auto 0.5rem'}} />
+                    <p style={{fontSize: '1.5rem', fontWeight: 'bold', color: '#1E90FF', margin: '0.25rem 0'}}>85%</p>
+                    <p style={{fontSize: '0.85rem', color: '#334155'}}>no se recicla</p>
                   </div>
-
-                  <div className="infographic-item slide-up">
-                    <div className="infographic-visual">
-                      <Factory size={48} className="infographic-icon production-icon" />
-                    </div>
-                    <div className="infographic-text">
-                      <span className="counter-number">540K</span>
-                      <p>familias cafeteras en Colombia</p>
-                    </div>
+                  <div style={{background: 'rgba(34, 139, 34, 0.1)', padding: '1rem', borderRadius: '12px', border: '2px solid rgba(34, 139, 34, 0.3)', textAlign: 'center'}}>
+                    <Anchor size={32} style={{color: '#228B22', margin: '0 auto 0.5rem'}} />
+                    <p style={{fontSize: '1.5rem', fontWeight: 'bold', color: '#228B22', margin: '0.25rem 0'}}>100%</p>
+                    <p style={{fontSize: '0.85rem', color: '#334155'}}>recuperable</p>
                   </div>
-
-                  <div className="infographic-item slide-up">
-                    <div className="infographic-visual">
-                      <AlertTriangle size={48} className="infographic-icon warning-icon" />
-                    </div>
-                    <div className="infographic-text">
-                      <span className="problem-stat">85%</span>
-                      <p>del cisco no se aprovecha adecuadamente</p>
-                    </div>
-                  </div>
-
-                  <div className="infographic-item slide-up">
-                    <div className="infographic-visual">
-                      <Waves size={48} className="infographic-icon" style={{color: '#1E90FF'}} />
-                    </div>
-                    <div className="infographic-text">
-                      <span className="problem-stat">~2.5K</span>
-                      <p>toneladas de madera al mar anualmente</p>
-                    </div>
-                  </div>
-
-                  <div className="infographic-item slide-up">
-                    <div className="infographic-visual">
-                      <Trash2 size={48} className="infographic-icon" style={{color: '#FF6347'}} />
-                    </div>
-                    <div className="infographic-text">
-                      <span className="problem-stat">~3.8K</span>
-                      <p>toneladas de HDPE urbano mensual</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="problem-summary slide-up">
-                  <p>Estos residuos representan una doble oportunidad: solucionar problemas ambientales rurales y urbanos mientras generamos materiales de construcción sostenibles para viviendas y espacios públicos.</p>
                 </div>
               </div>
 
-              <div className="image-column">
-                <img 
-                  src="/images/imagen_2.png" 
-                  alt="Cisco de café acumulado" 
-                  className="cisco-image slide-right"
-                  onError={(e) => {
-                   console.log('❌ Error loading imagen_2.png, using fallback');
-                    (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/4109743/pexels-photo-4109743.jpeg?auto=compress&cs=tinysrgb&w=800';
-                  }}
-                 onLoad={(e) => {
-                   const img = e.target as HTMLImageElement;
-                   console.log(`✅ Image loaded successfully: ${img.src}`);
-                   img.classList.add('visible');
-                 }}
-                />
+              {/* COLUMNA DERECHA: PROBLEMA RURAL (SECUNDARIO) */}
+              <div className="slide-up">
+                <div style={{background: 'linear-gradient(135deg, #78350f 0%, #92400e 100%)', padding: '2rem', borderRadius: '16px', marginBottom: '1.5rem', boxShadow: '0 8px 24px rgba(120, 53, 15, 0.3)'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem'}}>
+                    <Coffee size={48} style={{color: '#D97706'}} />
+                    <div>
+                      <h3 style={{color: 'white', fontSize: '1.8rem', margin: 0}}>Residuo Agrícola</h3>
+                      <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '0.95rem', margin: '0.25rem 0 0 0'}}>Cisco de café en Colombia</p>
+                    </div>
+                  </div>
+
+                  <div style={{background: 'rgba(255,255,255,0.15)', padding: '1.25rem', borderRadius: '12px', textAlign: 'center', marginBottom: '1.5rem'}}>
+                    <p style={{fontSize: '2.5rem', fontWeight: 'bold', color: '#FCD34D', margin: 0, lineHeight: 1}}>
+                      <span id="contador">195,000</span>+
+                    </p>
+                    <p style={{color: 'white', fontSize: '0.95rem', margin: '0.5rem 0 0 0'}}>toneladas anuales de cisco</p>
+                    <p style={{color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', margin: '0.5rem 0 0 0'}}>
+                      De <span id="productionCounter">14</span> millones de sacos de café/año
+                    </p>
+                  </div>
+
+                  <div style={{marginTop: '1.5rem', padding: '1rem', background: 'rgba(217, 119, 6, 0.2)', borderRadius: '8px', borderLeft: '4px solid #D97706'}}>
+                    <p style={{color: 'white', fontSize: '0.95rem', margin: 0, lineHeight: '1.5'}}>
+                      <strong>Oportunidad:</strong> El cisco representa el <span id="ciscoPercentage" style={{fontWeight: 'bold'}}>22</span>% del peso del café. Materia prima abundante para complementar la producción de materiales WPC.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Estadísticas rurales compactas */}
+                <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem'}}>
+                  <div style={{background: 'rgba(139, 69, 19, 0.1)', padding: '1rem', borderRadius: '12px', border: '2px solid rgba(139, 69, 19, 0.3)', textAlign: 'center'}}>
+                    <Factory size={32} style={{color: '#8B4513', margin: '0 auto 0.5rem'}} />
+                    <p style={{fontSize: '1.5rem', fontWeight: 'bold', color: '#8B4513', margin: '0.25rem 0'}}>540K</p>
+                    <p style={{fontSize: '0.85rem', color: '#334155'}}>familias cafeteras</p>
+                  </div>
+                  <div style={{background: 'rgba(255, 99, 71, 0.1)', padding: '1rem', borderRadius: '12px', border: '2px solid rgba(255, 99, 71, 0.3)', textAlign: 'center'}}>
+                    <AlertTriangle size={32} style={{color: '#FF6347', margin: '0 auto 0.5rem'}} />
+                    <p style={{fontSize: '1.5rem', fontWeight: 'bold', color: '#FF6347', margin: '0.25rem 0'}}>85%</p>
+                    <p style={{fontSize: '0.85rem', color: '#334155'}}>sin aprovechar</p>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            {/* CONCLUSIÓN UNIFICADA */}
+            <div className="slide-up" style={{marginTop: '2rem', padding: '1.5rem', background: 'linear-gradient(135deg, rgba(34, 139, 34, 0.15) 0%, rgba(22, 163, 74, 0.15) 100%)', borderRadius: '16px', border: '2px solid rgba(34, 139, 34, 0.3)', textAlign: 'center'}}>
+              <Recycle size={40} style={{color: '#228B22', margin: '0 auto 0.75rem'}} />
+              <p style={{fontSize: '1.15rem', fontWeight: '600', color: '#1e293b', margin: 0, lineHeight: '1.7'}}>
+                <strong style={{color: '#228B22'}}>Triple Solución:</strong> Limpiamos costas, valorizamos residuos urbanos y aprovechamos cisco de café para crear mobiliario sostenible y viviendas accesibles.
+              </p>
             </div>
           </div>
           <div className="particles-container"></div>
