@@ -156,23 +156,28 @@ body {
     .nav-items {
         position: fixed;
         top: 70px;
-        left: -100%;
+        left: -300px;
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.85);
+        background: rgba(255, 255, 255, 0.05);
         padding: 12px;
-        border-radius: 12px;
+        border-radius: 16px;
         width: 180px;
         max-width: 180px;
-        backdrop-filter: blur(15px);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
-        transition: left 0.3s ease;
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s ease;
         z-index: 1001;
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.18);
         gap: 0;
+        opacity: 0;
+        visibility: hidden;
     }
 
     .nav-items.mobile-open {
         left: 20px;
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-items a {
@@ -181,9 +186,11 @@ body {
         padding: 10px 8px;
         font-size: 0.85rem;
         margin-bottom: 6px;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px);
+        transition: all 0.2s ease;
     }
 
     .nav-items a:last-child {
@@ -191,16 +198,18 @@ body {
     }
 
     .nav-items a.active {
-        background: linear-gradient(135deg, #10b981, #5eead4);
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.9), rgba(94, 234, 212, 0.9));
         color: #0f172a;
         font-weight: 600;
         border-color: rgba(94, 234, 212, 0.6);
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
     }
 
     .nav-items a:hover:not(.active) {
-        background: rgba(14, 165, 233, 0.7);
+        background: rgba(14, 165, 233, 0.6);
         color: white;
         border-color: rgba(94, 234, 212, 0.4);
+        transform: translateY(-1px);
     }
 
     /* Hide watermark on mobile */
