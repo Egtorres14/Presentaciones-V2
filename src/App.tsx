@@ -360,8 +360,20 @@ const App: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Update current section state
+      const sectionIds = ['hero', 'problema', 'transformacion', 'galeria', 'aplicaciones-urbanas', 'impacto', 'economia-circular'];
+      const sectionIndex = sectionIds.indexOf(sectionId);
+      if (sectionIndex !== -1) {
+        setCurrentSection(sectionIndex);
+      }
     }
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
   };
 
   const animateGenericSection = (section: HTMLElement) => {
@@ -488,13 +500,13 @@ const App: React.FC = () => {
 
       {/* Navigation Menu */}
       <nav className="nav-items">
-        <a href="#hero" className={currentSection === 0 ? 'active' : ''}>Inicio</a>
-        <a href="#problema" className={currentSection === 1 ? 'active' : ''}>Problema</a>
-        <a href="#transformacion" className={currentSection === 2 ? 'active' : ''}>Solución</a>
-        <a href="#galeria" className={currentSection === 3 ? 'active' : ''}>Galería</a>
-        <a href="#aplicaciones-urbanas" className={currentSection === 4 ? 'active' : ''}>Urbano</a>
-        <a href="#impacto" className={currentSection === 5 ? 'active' : ''}>Impacto</a>
-        <a href="#economia-circular" className={currentSection === 6 ? 'active' : ''}>RSC</a>
+        <a href="#hero" className={currentSection === 0 ? 'active' : ''} onClick={(e) => handleNavClick(e, 'hero')}>Inicio</a>
+        <a href="#problema" className={currentSection === 1 ? 'active' : ''} onClick={(e) => handleNavClick(e, 'problema')}>Problema</a>
+        <a href="#transformacion" className={currentSection === 2 ? 'active' : ''} onClick={(e) => handleNavClick(e, 'transformacion')}>Solución</a>
+        <a href="#galeria" className={currentSection === 3 ? 'active' : ''} onClick={(e) => handleNavClick(e, 'galeria')}>Galería</a>
+        <a href="#aplicaciones-urbanas" className={currentSection === 4 ? 'active' : ''} onClick={(e) => handleNavClick(e, 'aplicaciones-urbanas')}>Urbano</a>
+        <a href="#impacto" className={currentSection === 5 ? 'active' : ''} onClick={(e) => handleNavClick(e, 'impacto')}>Impacto</a>
+        <a href="#economia-circular" className={currentSection === 6 ? 'active' : ''} onClick={(e) => handleNavClick(e, 'economia-circular')}>RSC</a>
       </nav>
 
       {/* MARCA DE AGUA FIJA */}
