@@ -127,19 +127,31 @@ const App: React.FC = () => {
         if (e.key === 'ArrowDown') {
           e.preventDefault();
           const nextSection = Math.min(currentSection + 1, sectionIds.length - 1);
-          scrollToSection(sectionIds[nextSection]);
+          if (nextSection !== currentSection) {
+            setCurrentSection(nextSection);
+            scrollToSection(sectionIds[nextSection]);
+          }
         } else if (e.key === 'ArrowUp') {
           e.preventDefault();
           const prevSection = Math.max(currentSection - 1, 0);
-          scrollToSection(sectionIds[prevSection]);
+          if (prevSection !== currentSection) {
+            setCurrentSection(prevSection);
+            scrollToSection(sectionIds[prevSection]);
+          }
         } else if (e.key === 'ArrowRight') {
           e.preventDefault();
           const nextSection = Math.min(currentSection + 1, sectionIds.length - 1);
-          scrollToSection(sectionIds[nextSection]);
+          if (nextSection !== currentSection) {
+            setCurrentSection(nextSection);
+            scrollToSection(sectionIds[nextSection]);
+          }
         } else if (e.key === 'ArrowLeft') {
           e.preventDefault();
           const prevSection = Math.max(currentSection - 1, 0);
-          scrollToSection(sectionIds[prevSection]);
+          if (prevSection !== currentSection) {
+            setCurrentSection(prevSection);
+            scrollToSection(sectionIds[prevSection]);
+          }
         }
       }
     };
@@ -151,7 +163,7 @@ const App: React.FC = () => {
   const triggerSectionAnimations = (section: HTMLElement) => {
     const sectionId = section.id;
     console.log(`🎯 Triggering animations for section: ${sectionId}`);
-    
+
     switch (sectionId) {
       case 'galeria':
         console.log('📸 Gallery section detected, starting animation...');
@@ -159,6 +171,7 @@ const App: React.FC = () => {
         break;
       case 'problema':
         animateCounter();
+        animateMarineCounters();
         setTimeout(() => createParticles(), 1200);
         break;
       case 'transformacion':
@@ -295,6 +308,59 @@ const App: React.FC = () => {
     requestAnimationFrame(animate);
   };
 
+  const animateMarineCounters = () => {
+    const easeOutExpo = (t: number) => {
+      return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+    };
+
+    // Animar contador de madera al mar (~2,500)
+    const woodCounter = document.getElementById('woodCounter');
+    if (woodCounter) {
+      const target = 2500;
+      const duration = 2000;
+      const start = performance.now();
+
+      const animate = (currentTime: number) => {
+        const elapsed = currentTime - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentValue = Math.floor(target * easeOutExpo(progress));
+        woodCounter.textContent = `~${currentValue.toLocaleString('es-CO')}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      requestAnimationFrame(animate);
+    }
+
+    // Animar contador de HDPE (~3,800)
+    const hdpeCounter = document.getElementById('hdpeCounter');
+    if (hdpeCounter) {
+      const target = 3800;
+      const duration = 2000;
+      const start = performance.now() + 300;
+
+      const animate = (currentTime: number) => {
+        if (currentTime < start) {
+          requestAnimationFrame(animate);
+          return;
+        }
+
+        const elapsed = currentTime - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentValue = Math.floor(target * easeOutExpo(progress));
+        hdpeCounter.textContent = `~${currentValue.toLocaleString('es-CO')}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      requestAnimationFrame(animate);
+    }
+  };
+
   const animateImpactCounters = () => {
     const familiesCounter = document.getElementById('familiesCounter');
     const costReductionCounter = document.getElementById('costReductionCounter');
@@ -380,13 +446,6 @@ const App: React.FC = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-      // Update current section state
-      const sectionIds = ['hero', 'problema', 'transformacion', 'galeria', 'aplicaciones-urbanas', 'impacto', 'economia-circular'];
-      const sectionIndex = sectionIds.indexOf(sectionId);
-      if (sectionIndex !== -1) {
-        setCurrentSection(sectionIndex);
-      }
     }
   };
 
@@ -620,11 +679,11 @@ const App: React.FC = () => {
 
                   <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem'}}>
                     <div style={{background: 'rgba(255,255,255,0.15)', padding: '1rem', borderRadius: '12px', textAlign: 'center'}}>
-                      <p style={{fontSize: '2rem', fontWeight: 'bold', color: '#FFD700', margin: 0}}>~2,500</p>
+                      <p id="woodCounter" style={{fontSize: '2rem', fontWeight: 'bold', color: '#FFD700', margin: 0}}>0</p>
                       <p style={{color: 'white', fontSize: '0.8rem', margin: '0.25rem 0 0 0'}}>ton madera/año al mar</p>
                     </div>
                     <div style={{background: 'rgba(255,255,255,0.15)', padding: '1rem', borderRadius: '12px', textAlign: 'center'}}>
-                      <p style={{fontSize: '2rem', fontWeight: 'bold', color: '#FF6347', margin: 0}}>~3,800</p>
+                      <p id="hdpeCounter" style={{fontSize: '2rem', fontWeight: 'bold', color: '#FF6347', margin: 0}}>0</p>
                       <p style={{color: 'white', fontSize: '0.8rem', margin: '0.25rem 0 0 0'}}>ton HDPE/mes</p>
                     </div>
                   </div>
